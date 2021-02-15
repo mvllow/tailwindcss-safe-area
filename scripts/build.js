@@ -31,6 +31,6 @@ function buildDistFile(filename) {
 
 console.info('Building CSS...')
 
-Promise.all([buildDistFile('line-clamp')]).then(() => {
+Promise.all([buildDistFile('safe-area')]).then(() => {
   console.log('Finished building CSS.')
 })
