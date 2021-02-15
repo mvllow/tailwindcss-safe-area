@@ -31,6 +31,9 @@ module.exports = {
 
 ## Usage
 
+> Shares the same api as margin (`m`) & padding (`p`)
+> Examples: `m-safe` `px-safe` `pb-safe`
+
 Use the `*-safe` utilities:
 
 ```html
