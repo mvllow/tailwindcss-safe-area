@@ -4,6 +4,12 @@
   "main": "src/index.js",
   "license": "MIT",
   "repository": "https://github.com/mvllow/tailwindcss-safe-area",
+  "keywords": [
+    "tailwindcss",
+    "safe-area-inset",
+    "margin",
+    "padding"
+  ],
   "prettier": {
     "printWidth": 100,
     "semi": false,
