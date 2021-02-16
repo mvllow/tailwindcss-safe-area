@@ -1,17 +1,11 @@
 # tailwindcss-safe-area
 
-A plugin that provides utilities for adding env(safe-area-inset-{top,right,bottom,left})
+Safe area inset utilities using the existing padding/margin syntax
 
-## Installation
-
-Install the plugin from npm:
+## Getting started
 
 ```sh
-# Using npm
-npm install tailwindcss-safe-area
-
-# Using Yarn
-yarn add tailwindcss-safe-area
+npm install --dev tailwindcss-safe-area
 ```
 
 Then add the plugin to your `tailwind.config.js` file:
@@ -31,9 +25,7 @@ module.exports = {
 
 ## Usage
 
-> Shares the same api as margin (`m`) & padding (`p`)
-
-> Examples: `m-safe` `px-safe` `pb-safe`
+This plugin extends the padding and margin utilities.
 
 Use the `*-safe` utilities:
 
@@ -50,3 +42,15 @@ Use the `*-safe` utilities:
   </p>
 </main>
 ```
+
+## Provided utilities
+
+| Utilities          | Styles                                            |
+| ------------------ | ------------------------------------------------- |
+| `m-safe, p-safe`   | `env(safe-area-inset-{top, right, bottom, left})` |
+| `mx-safe, px-safe` | `env(safe-area-inset-{right, left})`              |
+| `my-safe, py-safe` | `env(safe-area-inset-{top, bottom})`              |
+| `mt-safe, pt-safe` | `env(safe-area-inset-top)`                        |
+| `mr-safe, pr-safe` | `env(safe-area-inset-right)`                      |
+| `mb-safe, pb-safe` | `env(safe-area-inset-bottom)`                     |
+| `ml-safe, pl-safe` | `env(safe-area-inset-left)`                       |
