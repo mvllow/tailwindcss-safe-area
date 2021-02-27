@@ -54,6 +54,14 @@ const safeArea = plugin(({ addUtilities }) => {
     '.pl-safe': {
       paddingLeft: 'env(safe-area-inset-left)',
     },
+    '.min-h-screen-safe': {
+      minHeight: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
+      minHeight: '-webkit-fill-available',
+    },
+    '.h-screen-safe': {
+      height: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
+      height: '-webkit-fill-available',
+    },
   }
 
   addUtilities(newUtilities)
