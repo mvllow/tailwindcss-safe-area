@@ -45,12 +45,14 @@ Use the `*-safe` utilities:
 
 ## Provided utilities
 
-| Utilities          | Styles                                            |
-| ------------------ | ------------------------------------------------- |
-| `m-safe, p-safe`   | `env(safe-area-inset-{top, right, bottom, left})` |
-| `mx-safe, px-safe` | `env(safe-area-inset-{right, left})`              |
-| `my-safe, py-safe` | `env(safe-area-inset-{top, bottom})`              |
-| `mt-safe, pt-safe` | `env(safe-area-inset-top)`                        |
-| `mr-safe, pr-safe` | `env(safe-area-inset-right)`                      |
-| `mb-safe, pb-safe` | `env(safe-area-inset-bottom)`                     |
-| `ml-safe, pl-safe` | `env(safe-area-inset-left)`                       |
+| Utilities                          | Styles                                                                   |
+| ---------------------------------- | ------------------------------------------------------------------------ |
+| `m-safe, p-safe`                   | `env(safe-area-inset-{top, right, bottom, left})`                        |
+| `mx-safe, px-safe`                 | `env(safe-area-inset-{right, left})`                                     |
+| `my-safe, py-safe`                 | `env(safe-area-inset-{top, bottom})`                                     |
+| `mt-safe, pt-safe`                 | `env(safe-area-inset-top)`                                               |
+| `mr-safe, pr-safe`                 | `env(safe-area-inset-right)`                                             |
+| `mb-safe, pb-safe`                 | `env(safe-area-inset-bottom)`                                            |
+| `ml-safe, pl-safe`                 | `env(safe-area-inset-left)`                                              |
+| `min-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))` |
+|                                    | `-webkit-fill-available`                                                 |
