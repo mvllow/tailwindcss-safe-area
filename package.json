@@ -38,6 +38,9 @@
 		"useTabs": true
 	},
 	"xo": {
-		"prettier": true
+		"prettier": true,
+		"ignores": [
+			"demo"
+		]
 	}
 }
