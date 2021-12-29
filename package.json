@@ -1,28 +1,43 @@
 {
-  "name": "tailwindcss-safe-area",
-  "version": "0.2.1",
-  "main": "src/index.js",
-  "license": "MIT",
-  "repository": "https://github.com/mvllow/tailwindcss-safe-area",
-  "keywords": [
-    "tailwindcss",
-    "safe-area-inset",
-    "margin",
-    "padding"
-  ],
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "scripts": {
-    "prepublishOnly": "node scripts/build.js"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.2.0",
-    "clean-css": "^4.2.1",
-    "postcss": "^8.2.2",
-    "tailwindcss": "^2.0.2"
-  }
+	"name": "tailwindcss-safe-area",
+	"version": "0.2.1",
+	"description": "Tailwind CSS safe area helpers",
+	"license": "MIT",
+	"repository": "mvllow/tailwindcss-safe-area",
+	"funding": "https://github.com/sponsors/mvllow",
+	"author": {
+		"name": "mvllow",
+		"email": "mvllow@icloud.com"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "xo",
+		"release": "np"
+	},
+	"keywords": [
+		"tailwindcss",
+		"tailwindcss-plugin",
+		"safe-area-inset",
+		"pwa",
+		"margin",
+		"padding"
+	],
+	"devDependencies": {
+		"autoprefixer": "^10.4.1",
+		"np": "^7.6.0",
+		"postcss": "^8.4.5",
+		"prettier": "^2.5.1",
+		"tailwindcss": "^3.0.8",
+		"xo": "^0.47.0"
+	},
+	"prettier": {
+		"bracketSpacing": false,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"useTabs": true
+	},
+	"xo": {
+		"prettier": true
+	}
 }

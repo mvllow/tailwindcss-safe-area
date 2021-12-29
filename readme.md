@@ -1,6 +1,6 @@
 # tailwindcss-safe-area
 
-Safe area inset utilities using the existing padding/margin syntax
+Safe area inset utilities extending margin, padding, and height
 
 ## Getting started
 
@@ -13,13 +13,8 @@ Then add the plugin to your `tailwind.config.js` file:
 ```js
 // tailwind.config.js
 module.exports = {
-  theme: {
-    // ...
-  },
-  plugins: [
-    require('tailwindcss-safe-area'),
-    // ...
-  ],
+	theme: {},
+	plugins: [require('tailwindcss-safe-area')],
 }
 ```
 
@@ -30,17 +25,13 @@ This plugin extends the padding and margin utilities.
 Use the `*-safe` utilities:
 
 ```html
-<header class="pt-safe">
-  <h1>Ciao!</h1>
-</header>
+<header class="pt-safe">...</header>
 
-<main class="pb-safe">
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate itaque blanditiis eum
-    aperiam velit eaque aliquam, ex harum quisquam. Et consequuntur ipsa accusamus provident quae
-    magni, earum suscipit laboriosam aperiam!
-  </p>
+<main class="px-safe">
+	<p>ciao</p>
 </main>
+
+<footer class="pb-safe">...</footer>
 ```
 
 ## Provided utilities
@@ -56,3 +47,12 @@ Use the `*-safe` utilities:
 | `ml-safe, pl-safe`                 | `env(safe-area-inset-left)`                                              |
 | `min-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))` |
 |                                    | `-webkit-fill-available`                                                 |
+
+_Tip: To extend html content behind the safe area, set `viewport-fit=cover`_
+
+```html
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+/>
+```
