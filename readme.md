@@ -48,11 +48,36 @@ Use the `*-safe` utilities:
 | `min-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))` |
 |                                    | `-webkit-fill-available`                                                 |
 
-_Tip: To extend html content behind the safe area, set `viewport-fit=cover`_
+> Tip: To extend html content behind the safe area, set `viewport-fit=cover`
 
 ```html
 <meta
 	name="viewport"
 	content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 />
+```
+
+## Troubleshooting
+
+The `h-screen-safe` and `min-h-screen-safe` may not work as expected on Google Chrome. Add `height: -webkit-fill-available` on parent nodes:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body {
+    height: -webkit-fill-available;
+  }
+
+  /* If you are using React, you should add it on the root div as well */
+  #root {
+    height: -webkit-fill-available;
+  }
+}
 ```
