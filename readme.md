@@ -59,7 +59,7 @@ Use the `*-safe` utilities:
 
 ## Troubleshooting
 
-The `h-screen-safe` and `min-h-screen-safe` may not work as expected on Google Chrome. To make it work on this browser, you may need to add `-webkit-fill-available` on the `height` property to the all the div that wraps your content, up to the `html` div. To do so, simply add the following to your css file:
+The `h-screen-safe` and `min-h-screen-safe` may not work as expected on Google Chrome. Add `height: -webkit-fill-available` on parent nodes:
 
 ```css
 @tailwind base;
