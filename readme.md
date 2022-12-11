@@ -59,7 +59,7 @@ Use the `*-safe` utilities:
 
 ## Troubleshooting
 
-The `h-screen-safe` and `min-h-screen-safe` may not work as expected on Google Chrome. Add `height: -webkit-fill-available` on parent nodes:
+The `h-screen-safe` and `min-h-screen-safe` utilities may not work as expected on Google Chrome. Add `height: -webkit-fill-available` on parent nodes:
 
 ```css
 @tailwind base;
@@ -75,7 +75,7 @@ The `h-screen-safe` and `min-h-screen-safe` may not work as expected on Google C
     height: -webkit-fill-available;
   }
 
-  /* If you are using React, you should add it on the root div as well */
+  /* If using React, set height on the root div as well */
   #root {
     height: -webkit-fill-available;
   }
