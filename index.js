@@ -1,7 +1,7 @@
 // eslint-disable-next-line unicorn/prefer-module
 const plugin = require('tailwindcss/plugin')
 
-const safeArea = plugin(({addUtilities,matchUtilities,theme}) => {
+const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
 	const baseUtilities = {
 		'.m-safe': {
 			marginTop: 'env(safe-area-inset-top)',
@@ -70,35 +70,43 @@ const safeArea = plugin(({addUtilities,matchUtilities,theme}) => {
 	}
 	addUtilities(baseUtilities)
 
-	const offsetUtilities = Object.entries(baseUtilities).reduce((accu, [selector, propertyValue]) => {
-		const className = selector.slice(1);
-		accu[`${className}-offset`] = (x) => Object.entries(propertyValue).reduce((accu, [property, value]) => {
-			if (Array.isArray(value)) {
-				accu[property] = value.map((v, i) => i ? i : `calc(${v} + ${x})`)
-			} else {
-				accu[property] = `calc(${value} + ${x})`
-			}
+	const offsetUtilities = Object.entries(baseUtilities).reduce(
+		(accu, [selector, propertyValue]) => {
+			const className = selector.slice(1)
+			accu[`${className}-offset`] = (x) =>
+				Object.entries(propertyValue).reduce((accu, [property, value]) => {
+					if (Array.isArray(value)) {
+						accu[property] = value.map((v, i) => (i ? i : `calc(${v} + ${x})`))
+					} else {
+						accu[property] = `calc(${value} + ${x})`
+					}
+					return accu
+				}, {})
 			return accu
-		}, {})
-		return accu
-	}, {})
+		},
+		{}
+	)
 	matchUtilities(offsetUtilities, {
 		values: theme('spacing'),
 		supportsNegativeValues: true,
 	})
 
-	const orUtilities = Object.entries(baseUtilities).reduce((accu, [selector, propertyValue]) => {
-		const className = selector.slice(1);
-		accu[`${className}-or`] = (x) => Object.entries(propertyValue).reduce((accu, [property, value]) => {
-			if (Array.isArray(value)) {
-				accu[property] = value.map((v, i) => i ? i : `max(${v}, ${x})`)
-			} else {
-				accu[property] = `max(${value}, ${x})`
-			}
+	const orUtilities = Object.entries(baseUtilities).reduce(
+		(accu, [selector, propertyValue]) => {
+			const className = selector.slice(1)
+			accu[`${className}-or`] = (x) =>
+				Object.entries(propertyValue).reduce((accu, [property, value]) => {
+					if (Array.isArray(value)) {
+						accu[property] = value.map((v, i) => (i ? i : `max(${v}, ${x})`))
+					} else {
+						accu[property] = `max(${value}, ${x})`
+					}
+					return accu
+				}, {})
 			return accu
-		}, {})
-		return accu
-	}, {})
+		},
+		{}
+	)
 	matchUtilities(orUtilities, {
 		values: theme('spacing'),
 		supportsNegativeValues: true,
