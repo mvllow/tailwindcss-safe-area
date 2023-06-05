@@ -11,7 +11,6 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"test": "xo",
 		"release": "npx np@latest"
 	},
 	"engines": {
@@ -27,8 +26,7 @@
 	],
 	"devDependencies": {
 		"prettier": "^2.5.1",
-		"tailwindcss": "^3.0.8",
-		"xo": "^0.47.0"
+		"tailwindcss": "^3.0.8"
 	},
 	"prettier": {
 		"bracketSpacing": false,
@@ -36,11 +34,5 @@
 		"singleQuote": true,
 		"trailingComma": "es5",
 		"useTabs": true
-	},
-	"xo": {
-		"prettier": true,
-		"ignores": [
-			"demo"
-		]
 	}
 }

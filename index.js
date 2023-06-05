@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/prefer-module
 const plugin = require('tailwindcss/plugin')
 
 const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
@@ -113,5 +112,4 @@ const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
 	})
 })
 
-// eslint-disable-next-line unicorn/prefer-module
 module.exports = safeArea
