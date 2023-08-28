@@ -11,7 +11,7 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"release": "npx np@latest"
+		"release": "npx np@latest --no-tests"
 	},
 	"engines": {
 		"node": ">=16"
