@@ -72,6 +72,12 @@ const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
 				'-webkit-fill-available',
 			],
 		},
+		'.max-h-screen-safe': {
+			maxHeight: [
+				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
+				'-webkit-fill-available',
+			],
+		},
 		'.h-screen-safe': {
 			height: [
 				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',

@@ -60,18 +60,18 @@ The or utilities can be used by appending `-or-{value}` to the base utility. Thi
 
 ## Provided utilities
 
-| Utilities                          | Styles                                                                   |
-| ---------------------------------- | ------------------------------------------------------------------------ |
-| `m-safe, p-safe`                   | `env(safe-area-inset-{top, right, bottom, left})`                        |
-| `mx-safe, px-safe`                 | `env(safe-area-inset-{right, left})`                                     |
-| `my-safe, py-safe`                 | `env(safe-area-inset-{top, bottom})`                                     |
-| `mt-safe, pt-safe`                 | `env(safe-area-inset-top)`                                               |
-| `mr-safe, pr-safe`                 | `env(safe-area-inset-right)`                                             |
-| `mb-safe, pb-safe`                 | `env(safe-area-inset-bottom)`                                            |
-| `ml-safe, pl-safe`                 | `env(safe-area-inset-left)`                                              |
-| `min-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))`<br>`-webkit-fill-available`                                                 |
-| `*-safe-offset-{value}`            | `calc(env(safe-area-inset-*) + {value})`                                 |
-| `*-safe-or-{value}`                | `max(env(safe-area-inset-*), {value})`                                   |
+| Utilities                                             | Styles                                                                                               |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `m-safe, p-safe`                                      | `env(safe-area-inset-{top, right, bottom, left})`                                                    |
+| `mx-safe, px-safe`                                    | `env(safe-area-inset-{right, left})`                                                                 |
+| `my-safe, py-safe`                                    | `env(safe-area-inset-{top, bottom})`                                                                 |
+| `mt-safe, pt-safe`                                    | `env(safe-area-inset-top)`                                                                           |
+| `mr-safe, pr-safe`                                    | `env(safe-area-inset-right)`                                                                         |
+| `mb-safe, pb-safe`                                    | `env(safe-area-inset-bottom)`                                                                        |
+| `ml-safe, pl-safe`                                    | `env(safe-area-inset-left)`                                                                          |
+| `min-h-screen-safe, max-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))`<br>`-webkit-fill-available` |
+| `*-safe-offset-{value}`                               | `calc(env(safe-area-inset-*) + {value})`                                                             |
+| `*-safe-or-{value}`                                   | `max(env(safe-area-inset-*), {value})`                                                               |
 
 > Tip: To extend html content behind the safe area, set `viewport-fit=cover`
 
@@ -94,7 +94,7 @@ This applies a top padding to the header that is equal to the safe area inset at
 
 ```css
 .pt-safe {
-  padding-top: env(safe-area-inset-top);
+	padding-top: env(safe-area-inset-top);
 }
 ```
 
@@ -108,7 +108,7 @@ This applies a right padding to the div that is equal to the safe area inset on 
 
 ```css
 .pr-safe-offset-4 {
-  padding-right: calc(env(safe-area-inset-right) + 1rem);
+	padding-right: calc(env(safe-area-inset-right) + 1rem);
 }
 ```
 
@@ -122,7 +122,7 @@ This applies a bottom padding to the div that is the larger of the safe area ins
 
 ```css
 .pb-safe-or-8 {
-  padding-bottom: max(env(safe-area-inset-bottom), 2rem);
+	padding-bottom: max(env(safe-area-inset-bottom), 2rem);
 }
 ```
 
@@ -138,17 +138,17 @@ The `h-screen-safe` and `min-h-screen-safe` utilities may not work as expected o
 @tailwind utilities;
 
 @layer base {
-  html {
-    height: -webkit-fill-available;
-  }
+	html {
+		height: -webkit-fill-available;
+	}
 
-  body {
-    height: -webkit-fill-available;
-  }
+	body {
+		height: -webkit-fill-available;
+	}
 
-  /* If using React, set height on the root div as well */
-  #root {
-    height: -webkit-fill-available;
-  }
+	/* If using React, set height on the root div as well */
+	#root {
+		height: -webkit-fill-available;
+	}
 }
 ```
