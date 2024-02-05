@@ -24,9 +24,11 @@
 		"margin",
 		"padding"
 	],
+	"peerDependencies": {
+    "tailwindcss": "^2.0.0 || >=3.0.0"
+  },
 	"devDependencies": {
-		"prettier": "^2.5.1",
-		"tailwindcss": "^3.0.8"
+		"prettier": "^2.5.1"
 	},
 	"prettier": {
 		"bracketSpacing": false,
