@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"repository": "mvllow/tailwindcss-safe-area",
 	"funding": "https://github.com/sponsors/mvllow",
+	"types": "tailwindcss-safe-area.d.ts",
 	"author": {
 		"name": "mvllow",
 		"email": "mvllow@icloud.com"
