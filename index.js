@@ -1,189 +1,228 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
-const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
+function generateVariantUtilities(baseUtilities, variant, generateValue) {
+	return Object.entries(baseUtilities).reduce(
+		(acc, [selector, propertyValue]) => {
+			const className = selector.slice(1);
+			acc[`${className}-${variant}`] = (x) =>
+				Object.entries(propertyValue).reduce((result, [property, value]) => {
+					if (Array.isArray(value)) {
+						result[property] = value.map((v) =>
+							v === "-webkit-fill-available" ? v : generateValue(v, x),
+						);
+					} else {
+						result[property] = generateValue(value, x);
+					}
+					return result;
+				}, {});
+			return acc;
+		},
+		{},
+	);
+}
+
+const safeArea = plugin(({ addUtilities, matchUtilities, theme }) => {
 	const baseUtilities = {
-		'.m-safe': {
-			marginTop: 'env(safe-area-inset-top)',
-			marginRight: 'env(safe-area-inset-right)',
-			marginBottom: 'env(safe-area-inset-bottom)',
-			marginLeft: 'env(safe-area-inset-left)',
+		".m-safe": {
+			marginTop: "env(safe-area-inset-top)",
+			marginRight: "env(safe-area-inset-right)",
+			marginBottom: "env(safe-area-inset-bottom)",
+			marginLeft: "env(safe-area-inset-left)",
 		},
-		'.mx-safe': {
-			marginRight: 'env(safe-area-inset-right)',
-			marginLeft: 'env(safe-area-inset-left)',
+		".mx-safe": {
+			marginRight: "env(safe-area-inset-right)",
+			marginLeft: "env(safe-area-inset-left)",
 		},
-		'.my-safe': {
-			marginTop: 'env(safe-area-inset-top)',
-			marginBottom: 'env(safe-area-inset-bottom)',
+		".my-safe": {
+			marginTop: "env(safe-area-inset-top)",
+			marginBottom: "env(safe-area-inset-bottom)",
 		},
-		'.mt-safe': {
-			marginTop: 'env(safe-area-inset-top)',
+		".ms-safe": {
+			marginInlineStart: "env(safe-area-inset-left)",
 		},
-		'.mr-safe': {
-			marginRight: 'env(safe-area-inset-right)',
+		".me-safe": {
+			marginInlineEnd: "env(safe-area-inset-left)",
 		},
-		'.mb-safe': {
-			marginBottom: 'env(safe-area-inset-bottom)',
+		".mt-safe": {
+			marginTop: "env(safe-area-inset-top)",
 		},
-		'.ml-safe': {
-			marginLeft: 'env(safe-area-inset-left)',
+		".mr-safe": {
+			marginRight: "env(safe-area-inset-right)",
 		},
-		'.p-safe': {
-			paddingTop: 'env(safe-area-inset-top)',
-			paddingRight: 'env(safe-area-inset-right)',
-			paddingBottom: 'env(safe-area-inset-bottom)',
-			paddingLeft: 'env(safe-area-inset-left)',
+		".mb-safe": {
+			marginBottom: "env(safe-area-inset-bottom)",
 		},
-		'.px-safe': {
-			paddingRight: 'env(safe-area-inset-right)',
-			paddingLeft: 'env(safe-area-inset-left)',
+		".ml-safe": {
+			marginLeft: "env(safe-area-inset-left)",
 		},
-		'.py-safe': {
-			paddingTop: 'env(safe-area-inset-top)',
-			paddingBottom: 'env(safe-area-inset-bottom)',
+		".p-safe": {
+			paddingTop: "env(safe-area-inset-top)",
+			paddingRight: "env(safe-area-inset-right)",
+			paddingBottom: "env(safe-area-inset-bottom)",
+			paddingLeft: "env(safe-area-inset-left)",
 		},
-		'.pt-safe': {
-			paddingTop: 'env(safe-area-inset-top)',
+		".px-safe": {
+			paddingRight: "env(safe-area-inset-right)",
+			paddingLeft: "env(safe-area-inset-left)",
 		},
-		'.pr-safe': {
-			paddingRight: 'env(safe-area-inset-right)',
+		".py-safe": {
+			paddingTop: "env(safe-area-inset-top)",
+			paddingBottom: "env(safe-area-inset-bottom)",
 		},
-		'.pb-safe': {
-			paddingBottom: 'env(safe-area-inset-bottom)',
+		".ps-safe": {
+			paddingInlineStart: "env(safe-area-inset-left)",
 		},
-		'.pl-safe': {
-			paddingLeft: 'env(safe-area-inset-left)',
+		".pe-safe": {
+			paddingInlineEnd: "env(safe-area-inset-left)",
 		},
-		'.scroll-m-safe': {
-			scrollMarginTop: 'env(safe-area-inset-top)',
-			scrollMarginRight: 'env(safe-area-inset-right)',
-			scrollMarginBottom: 'env(safe-area-inset-bottom)',
-			scrollMarginLeft: 'env(safe-area-inset-left)',
+		".pt-safe": {
+			paddingTop: "env(safe-area-inset-top)",
 		},
-		'.scroll-mx-safe': {
-			scrollMarginRight: 'env(safe-area-inset-right)',
-			scrollMarginLeft: 'env(safe-area-inset-left)',
+		".pr-safe": {
+			paddingRight: "env(safe-area-inset-right)",
 		},
-		'.scroll-my-safe': {
-			scrollMarginTop: 'env(safe-area-inset-top)',
-			scrollMarginBottom: 'env(safe-area-inset-bottom)',
+		".pb-safe": {
+			paddingBottom: "env(safe-area-inset-bottom)",
 		},
-		'.scroll-mt-safe': {
-			scrollMarginTop: 'env(safe-area-inset-top)',
+		".pl-safe": {
+			paddingLeft: "env(safe-area-inset-left)",
 		},
-		'.scroll-mr-safe': {
-			scrollMarginRight: 'env(safe-area-inset-right)',
+		".scroll-m-safe": {
+			scrollMarginTop: "env(safe-area-inset-top)",
+			scrollMarginRight: "env(safe-area-inset-right)",
+			scrollMarginBottom: "env(safe-area-inset-bottom)",
+			scrollMarginLeft: "env(safe-area-inset-left)",
 		},
-		'.scroll-mb-safe': {
-			scrollMarginBottom: 'env(safe-area-inset-bottom)',
+		".scroll-mx-safe": {
+			scrollMarginRight: "env(safe-area-inset-right)",
+			scrollMarginLeft: "env(safe-area-inset-left)",
 		},
-		'.scroll-ml-safe': {
-			scrollMarginLeft: 'env(safe-area-inset-left)',
+		".scroll-my-safe": {
+			scrollMarginTop: "env(safe-area-inset-top)",
+			scrollMarginBottom: "env(safe-area-inset-bottom)",
 		},
-		'.scroll-p-safe': {
-			scrollPaddingTop: 'env(safe-area-inset-top)',
-			scrollPaddingRight: 'env(safe-area-inset-right)',
-			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
-			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		".scroll-ms-safe": {
+			scrollMarginInlineStart: "env(safe-area-inset-left)",
 		},
-		'.scroll-px-safe': {
-			scrollPaddingRight: 'env(safe-area-inset-right)',
-			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		".scroll-me-safe": {
+			scrollMarginInlineEnd: "env(safe-area-inset-left)",
 		},
-		'.scroll-py-safe': {
-			scrollPaddingTop: 'env(safe-area-inset-top)',
-			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
+		".scroll-mt-safe": {
+			scrollMarginTop: "env(safe-area-inset-top)",
 		},
-		'.scroll-pt-safe': {
-			scrollPaddingTop: 'env(safe-area-inset-top)',
+		".scroll-mr-safe": {
+			scrollMarginRight: "env(safe-area-inset-right)",
 		},
-		'.scroll-pr-safe': {
-			scrollPaddingRight: 'env(safe-area-inset-right)',
+		".scroll-mb-safe": {
+			scrollMarginBottom: "env(safe-area-inset-bottom)",
 		},
-		'.scroll-pb-safe': {
-			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
+		".scroll-ml-safe": {
+			scrollMarginLeft: "env(safe-area-inset-left)",
 		},
-		'.scroll-pl-safe': {
-			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		".scroll-p-safe": {
+			scrollPaddingTop: "env(safe-area-inset-top)",
+			scrollPaddingRight: "env(safe-area-inset-right)",
+			scrollPaddingBottom: "env(safe-area-inset-bottom)",
+			scrollPaddingLeft: "env(safe-area-inset-left)",
 		},
-		'.top-safe': {
-			top: 'env(safe-area-inset-top)',
+		".scroll-px-safe": {
+			scrollPaddingRight: "env(safe-area-inset-right)",
+			scrollPaddingLeft: "env(safe-area-inset-left)",
 		},
-		'.right-safe': {
-			right: 'env(safe-area-inset-right)',
+		".scroll-py-safe": {
+			scrollPaddingTop: "env(safe-area-inset-top)",
+			scrollPaddingBottom: "env(safe-area-inset-bottom)",
 		},
-		'.bottom-safe': {
-			bottom: 'env(safe-area-inset-bottom)',
+		".scroll-ps-safe": {
+			scrollPaddingInlineStart: "env(safe-area-inset-left)",
 		},
-		'.left-safe': {
-			left: 'env(safe-area-inset-left)',
+		".scroll-pe-safe": {
+			scrollPaddingInlineEnd: "env(safe-area-inset-left)",
 		},
-		'.min-h-screen-safe': {
+		".scroll-pt-safe": {
+			scrollPaddingTop: "env(safe-area-inset-top)",
+		},
+		".scroll-pr-safe": {
+			scrollPaddingRight: "env(safe-area-inset-right)",
+		},
+		".scroll-pb-safe": {
+			scrollPaddingBottom: "env(safe-area-inset-bottom)",
+		},
+		".scroll-pl-safe": {
+			scrollPaddingLeft: "env(safe-area-inset-left)",
+		},
+		".inset-safe": {
+			top: "env(safe-area-inset-top)",
+			right: "env(safe-area-inset-right)",
+			bottom: "env(safe-area-inset-bottom)",
+			left: "env(safe-area-inset-left)",
+		},
+		".inset-x-safe": {
+			right: "env(safe-area-inset-right)",
+			left: "env(safe-area-inset-left)",
+		},
+		".inset-y-safe": {
+			top: "env(safe-area-inset-top)",
+			bottom: "env(safe-area-inset-bottom)",
+		},
+		".start-safe": {
+			top: "env(safe-area-inset-left)",
+		},
+		".end-safe": {
+			top: "env(safe-area-inset-left)",
+		},
+		".top-safe": {
+			top: "env(safe-area-inset-top)",
+		},
+		".right-safe": {
+			right: "env(safe-area-inset-right)",
+		},
+		".bottom-safe": {
+			bottom: "env(safe-area-inset-bottom)",
+		},
+		".left-safe": {
+			left: "env(safe-area-inset-left)",
+		},
+		".min-h-screen-safe": {
 			minHeight: [
-				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-				'-webkit-fill-available',
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+				"-webkit-fill-available",
 			],
 		},
-		'.max-h-screen-safe': {
+		".max-h-screen-safe": {
 			maxHeight: [
-				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-				'-webkit-fill-available',
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+				"-webkit-fill-available",
 			],
 		},
-		'.h-screen-safe': {
+		".h-screen-safe": {
 			height: [
-				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-				'-webkit-fill-available',
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+				"-webkit-fill-available",
 			],
 		},
-	}
-	addUtilities(baseUtilities)
+	};
+	addUtilities(baseUtilities);
 
-	const offsetUtilities = Object.entries(baseUtilities).reduce(
-		(accu, [selector, propertyValue]) => {
-			const className = selector.slice(1)
-			accu[`${className}-offset`] = (x) =>
-				Object.entries(propertyValue).reduce((accu, [property, value]) => {
-					if (Array.isArray(value)) {
-						accu[property] = value.map((v) =>
-							v === '-webkit-fill-available' ? v : `calc(${v} + ${x})`
-						)
-					} else {
-						accu[property] = `calc(${value} + ${x})`
-					}
-					return accu
-				}, {})
-			return accu
-		},
-		{}
-	)
+	const offsetUtilities = generateVariantUtilities(
+		baseUtilities,
+		"offset",
+		(v, x) => `calc(${v} + ${x})`,
+	);
 	matchUtilities(offsetUtilities, {
-		values: theme('spacing'),
+		values: theme("spacing"),
 		supportsNegativeValues: true,
-	})
+	});
 
-	const orUtilities = Object.entries(baseUtilities).reduce(
-		(accu, [selector, propertyValue]) => {
-			const className = selector.slice(1)
-			accu[`${className}-or`] = (x) =>
-				Object.entries(propertyValue).reduce((accu, [property, value]) => {
-					if (Array.isArray(value)) {
-						accu[property] = value.map((v, i) =>
-							v === '-webkit-fill-available' ? v : `max(${v}, ${x})`
-						)
-					} else {
-						accu[property] = `max(${value}, ${x})`
-					}
-					return accu
-				}, {})
-			return accu
-		},
-		{}
-	)
+	const orUtilities = generateVariantUtilities(
+		baseUtilities,
+		"or",
+		(v, x) => `max(${v}, ${x})`,
+	);
 	matchUtilities(orUtilities, {
-		values: theme('spacing'),
+		values: theme("spacing"),
 		supportsNegativeValues: true,
-	})
-})
+	});
+});
 
-module.exports = safeArea
+module.exports = safeArea;
