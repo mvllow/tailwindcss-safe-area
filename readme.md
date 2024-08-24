@@ -1,6 +1,12 @@
 # tailwindcss-safe-area
 
-Safe area inset utilities extending margin, padding, and height. The plugin provides base, offset, and or utilities for better adaptability across various scenarios.
+Tailwind CSS utilities for safe areas.
+
+## Features
+
+- **Responsive safe area utilities** tailored for margin, padding, height and position
+- **Flexible spacing helpers** to extend safe areas or ensure content remains unobstructed with offset and minimum value variants
+- **Modern CSS support**, including `inline-start`, `inline-end`, `scroll-margin`, `scroll-padding` and more to handle modern layouts
 
 ## Getting started
 
@@ -14,123 +20,213 @@ Then add the plugin to your `tailwind.config.js` file:
 // tailwind.config.js
 module.exports = {
 	theme: {},
-	plugins: [require('tailwindcss-safe-area')],
-}
+	plugins: [require("tailwindcss-safe-area")],
+};
 ```
 
 ## Usage
 
-This plugin extends the padding and margin utilities with three types:
+To extend content behind the safe area, add or append `viewport-fit=cover` to your viewport meta tag:
 
-1. **Base Utilities**: The base safe area inset utilities. These include the initial padding and margin utilities with the safe area in consideration. They can be used where you want the element to respect the safe area insets.
-
-2. **Offset Utilities**: These utilities allow you to extend the base safe area inset by a given offset. This can be particularly useful when you want a bit more spacing than the safe area provides, for example in situations where you have a translucent UI over a background image or video and want to ensure important visual content isn't covered.
-
-3. **Or Utilities**: These utilities let you specify a minimum value to use if it's greater than the safe area inset. This can be used when you have certain layout elements that should respect the safe area but should never be smaller than a certain size.
-
-Here are some examples:
+```html
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
+```
 
 ### Base utilities
 
+Handle safe area margin, padding, height and position.
+
 ```html
 <header class="pt-safe">...</header>
-
-<main class="px-safe">
-	<p>ciao</p>
-</main>
-
+<main class="px-safe">...</main>
 <footer class="pb-safe">...</footer>
 ```
 
 ### Offset utilities
 
-The offset utilities can be used by appending `-offset-{value}` to the base utility. This applies an additional margin or padding equal to the specified value. For example, if you want to apply a right padding that is equal to the safe area inset plus 4 units of your spacing scale, you can use:
+Extend base utilities with an additional offset.
 
 ```html
 <div class="pr-safe-offset-4">...</div>
 ```
+
+This adds right padding equal to the safe area plus `4`.
 
 ### Or utilities
 
-The or utilities can be used by appending `-or-{value}` to the base utility. This applies a margin or padding that is the larger of the safe area inset and the specified value. For example, if you want to apply a bottom padding that is the larger of the safe area inset and 8 units of your spacing scale, you can use:
+Apply a minimum value while respecting the safe area.
 
 ```html
 <div class="pb-safe-or-8">...</div>
 ```
 
-## Provided utilities
+This adds bottom padding equal to the larger of the safe area or `8`.
 
-| Utilities                                             | Styles                                                                                               |
-| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `m-safe, p-safe`                                      | `env(safe-area-inset-{top, right, bottom, left})`                                                    |
-| `mx-safe, px-safe`                                    | `env(safe-area-inset-{right, left})`                                                                 |
-| `my-safe, py-safe`                                    | `env(safe-area-inset-{top, bottom})`                                                                 |
-| `mt-safe, pt-safe`                                    | `env(safe-area-inset-top)`                                                                           |
-| `mr-safe, pr-safe`                                    | `env(safe-area-inset-right)`                                                                         |
-| `mb-safe, pb-safe`                                    | `env(safe-area-inset-bottom)`                                                                        |
-| `ml-safe, pl-safe`                                    | `env(safe-area-inset-left)`                                                                          |
-| `min-h-screen-safe, max-h-screen-safe, h-screen-safe` | `calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))`<br>`-webkit-fill-available` |
-| `*-safe-offset-{value}`                               | `calc(env(safe-area-inset-*) + {value})`                                                             |
-| `*-safe-or-{value}`                                   | `max(env(safe-area-inset-*), {value})`                                                               |
+## Generated styles
 
-> Tip: To extend html content behind the safe area, set `viewport-fit=cover`
-
-```html
-<meta
-	name="viewport"
-	content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-/>
-```
-
-<details><summary><h4> Examples with generated output</h4></summary>
-
-#### Base Utility Example
-
-```html
-<header class="pt-safe">...</header>
-```
-
-This applies a top padding to the header that is equal to the safe area inset at the top. The generated CSS would be:
+### Margin
 
 ```css
+.m-safe {
+	margin-top: env(safe-area-inset-top);
+	margin-right: env(safe-area-inset-right);
+	margin-bottom: env(safe-area-inset-bottom);
+	margin-left: env(safe-area-inset-left);
+}
+.mx-safe {
+	margin-right: env(safe-area-inset-right);
+	margin-left: env(safe-area-inset-left);
+}
+.my-safe {
+	margin-top: env(safe-area-inset-top);
+	margin-bottom: env(safe-area-inset-bottom);
+}
+.ms-safe {
+	margin-inline-start: env(safe-area-inset-left);
+}
+.me-safe {
+	margin-inline-end: env(safe-area-inset-left);
+}
+.mt-safe {
+	margin-top: env(safe-area-inset-top);
+}
+.mr-safe {
+	margin-right: env(safe-area-inset-right);
+}
+.mb-safe {
+	margin-bottom: env(safe-area-inset-bottom);
+}
+.ml-safe {
+	margin-left: env(safe-area-inset-left);
+}
+```
+
+### Scroll margin
+
+Same as [margin](#margin), prefixed with `scroll-`.
+
+### Padding
+
+```css
+.p-safe {
+	padding-top: env(safe-area-inset-top);
+	padding-right: env(safe-area-inset-right);
+	padding-bottom: env(safe-area-inset-bottom);
+	padding-left: env(safe-area-inset-left);
+}
+.px-safe {
+	padding-right: env(safe-area-inset-right);
+	padding-left: env(safe-area-inset-left);
+}
+.py-safe {
+	padding-top: env(safe-area-inset-top);
+	padding-bottom: env(safe-area-inset-bottom);
+}
+.ps-safe {
+	padding-inline-start: env(safe-area-inset-left);
+}
+.pe-safe {
+	padding-inline-end: env(safe-area-inset-left);
+}
 .pt-safe {
 	padding-top: env(safe-area-inset-top);
 }
-```
-
-#### Offset Utility Example
-
-```html
-<div class="pr-safe-offset-4">...</div>
-```
-
-This applies a right padding to the div that is equal to the safe area inset on the right plus 4 units of your spacing scale. Assuming your spacing scale unit is 8px (default in Tailwind CSS), the generated CSS would be:
-
-```css
-.pr-safe-offset-4 {
-	padding-right: calc(env(safe-area-inset-right) + 1rem);
+.pr-safe {
+	padding-right: env(safe-area-inset-right);
+}
+.pb-safe {
+	padding-bottom: env(safe-area-inset-bottom);
+}
+.pl-safe {
+	padding-left: env(safe-area-inset-left);
 }
 ```
 
-#### Or Utility Example
+### Scroll padding
 
-```html
-<div class="pb-safe-or-8">...</div>
-```
+Same as [padding](#padding), prefixed with `scroll-`.
 
-This applies a bottom padding to the div that is the larger of the safe area inset at the bottom and 8 units of your spacing scale. Assuming your spacing scale unit is 8px (default in Tailwind CSS), the generated CSS would be:
+### Height
 
 ```css
-.pb-safe-or-8 {
-	padding-bottom: max(env(safe-area-inset-bottom), 2rem);
+.min-h-screen-safe {
+	min-height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+	min-height: -webkit-fill-available;
+}
+.max-h-screen-safe {
+	max-height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+	max-height: -webkit-fill-available;
+}
+.h-screen-safe {
+	height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+	height: -webkit-fill-available;
 }
 ```
 
-</details>
+### Position
+
+```css
+.inset-safe: {
+	top: env(safe-area-inset-top);
+	right: env(safe-area-inset-right);
+	bottom: env(safe-area-inset-bottom);
+	left: env(safe-area-inset-left);
+}
+.inset-x-safe: {
+	right: env(safe-area-inset-right);
+	left: env(safe-area-inset-left);
+}
+.inset-y-safe: {
+	top: env(safe-area-inset-top);
+	bottom: env(safe-area-inset-bottom);
+}
+.start-safe: {
+	inset-inline-start: env(safe-area-inset-left);
+}
+.end-safe: {
+	inset-inline-end: env(safe-area-inset-left);
+}
+.top-safe: {
+	top: env(safe-area-inset-top);
+}
+.right-safe: {
+	right: env(safe-area-inset-right);
+}
+.bottom-safe: {
+	bottom: env(safe-area-inset-bottom);
+}
+.left-safe: {
+	left: env(safe-area-inset-left);
+}
+```
+
+### Variants
+
+Spacing-based utiltiies can be augmented with either `-offset-{value}` or `-or-{value}` suffixes.
+
+For example, using Tailwind's default spacing scale:
+
+```css
+.mr-safe-offset-8 {
+	margin-right: calc(env(safe-area-inset-right) + 2rem);
+}
+.pb-safe-or-20 {
+	padding-bottom: max(env(safe-area-inset-right), 5rem);
+}
+```
 
 ## Troubleshooting
 
-The `h-screen-safe` and `min-h-screen-safe` utilities may not work as expected on Google Chrome. Add `height: -webkit-fill-available` on parent nodes:
+The height utilities may not always work as expected. Add the following global CSS for the correct behaviour:
 
 ```css
 @tailwind base;
@@ -138,15 +234,8 @@ The `h-screen-safe` and `min-h-screen-safe` utilities may not work as expected o
 @tailwind utilities;
 
 @layer base {
-	html {
-		height: -webkit-fill-available;
-	}
-
-	body {
-		height: -webkit-fill-available;
-	}
-
-	/* If using React, set height on the root div as well */
+	html,
+	body,
 	#root {
 		height: -webkit-fill-available;
 	}
