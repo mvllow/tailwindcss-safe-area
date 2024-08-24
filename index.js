@@ -166,10 +166,10 @@ const safeArea = plugin(({ addUtilities, matchUtilities, theme }) => {
 			bottom: "env(safe-area-inset-bottom)",
 		},
 		".start-safe": {
-			top: "env(safe-area-inset-left)",
+			insetInlineStart: "env(safe-area-inset-left)",
 		},
 		".end-safe": {
-			top: "env(safe-area-inset-left)",
+			insetInlineEnd: "env(safe-area-inset-left)",
 		},
 		".top-safe": {
 			top: "env(safe-area-inset-top)",

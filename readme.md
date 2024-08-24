@@ -185,10 +185,10 @@ Same as [padding](#padding), prefixed with `scroll-`.
 	bottom: env(safe-area-inset-bottom);
 }
 .start-safe: {
-	top: env(safe-area-inset-left);
+	inset-inline-start: env(safe-area-inset-left);
 }
 .end-safe: {
-	top: env(safe-area-inset-left);
+	inset-inline-end: env(safe-area-inset-left);
 }
 .top-safe: {
 	top: env(safe-area-inset-top);
