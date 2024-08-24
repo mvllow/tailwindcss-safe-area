@@ -2,6 +2,12 @@
 
 Tailwind CSS utilities for safe areas.
 
+## Features
+
+- **Responsive safe area utilities** tailored for margin, padding, height and position
+- **Flexible spacing helpers** to extend safe areas or ensure content remains unobstructed with offset and minimum value variants
+- **Modern CSS support**, including `inline-start`, `inline-end`, `scroll-margin`, `scroll-padding` and more to handle modern layouts
+
 ## Getting started
 
 ```sh
@@ -20,21 +26,18 @@ module.exports = {
 
 ## Usage
 
-This plugin provides three categories of utilities to handle safe areas:
-
-1. **Base utilities**: Handle safe area margins, padding, position, and height.
-2. **Offset utilities**: Add additional spacing to the base utilities.
-3. **Or utilities**: Choose the larger value between the safe area and a custom value.
-
-To extend content behind the safe area, update your viewport meta tag:
+To extend content behind the safe area, add or append `viewport-fit=cover` to your viewport meta tag:
 
 ```html
-<meta name="viewport" content="viewport-fit=cover" />
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
 ```
 
 ### Base utilities
 
-Handle safe area margins, padding, position, and height.
+Handle safe area margin, padding, height and position.
 
 ```html
 <header class="pt-safe">...</header>
@@ -44,7 +47,7 @@ Handle safe area margins, padding, position, and height.
 
 ### Offset utilities
 
-Extend base utilities with an additional offset on top of the safe area.
+Extend base utilities with an additional offset.
 
 ```html
 <div class="pr-safe-offset-4">...</div>
@@ -53,6 +56,8 @@ Extend base utilities with an additional offset on top of the safe area.
 This adds right padding equal to the safe area plus `4`.
 
 ### Or utilities
+
+Apply a minimum value while respecting the safe area.
 
 ```html
 <div class="pb-safe-or-8">...</div>
@@ -221,7 +226,7 @@ For example, using Tailwind's default spacing scale:
 
 ## Troubleshooting
 
-The height utilities may not always work as expected. Add the following global CSS to ensure correct behaviour:
+The height utilities may not always work as expected. Add the following global CSS for the correct behaviour:
 
 ```css
 @tailwind base;
