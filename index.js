@@ -54,6 +54,58 @@ const safeArea = plugin(({addUtilities, matchUtilities, theme}) => {
 		'.pl-safe': {
 			paddingLeft: 'env(safe-area-inset-left)',
 		},
+		'.scroll-m-safe': {
+			scrollMarginTop: 'env(safe-area-inset-top)',
+			scrollMarginRight: 'env(safe-area-inset-right)',
+			scrollMarginBottom: 'env(safe-area-inset-bottom)',
+			scrollMarginLeft: 'env(safe-area-inset-left)',
+		},
+		'.scroll-mx-safe': {
+			scrollMarginRight: 'env(safe-area-inset-right)',
+			scrollMarginLeft: 'env(safe-area-inset-left)',
+		},
+		'.scroll-my-safe': {
+			scrollMarginTop: 'env(safe-area-inset-top)',
+			scrollMarginBottom: 'env(safe-area-inset-bottom)',
+		},
+		'.scroll-mt-safe': {
+			scrollMarginTop: 'env(safe-area-inset-top)',
+		},
+		'.scroll-mr-safe': {
+			scrollMarginRight: 'env(safe-area-inset-right)',
+		},
+		'.scroll-mb-safe': {
+			scrollMarginBottom: 'env(safe-area-inset-bottom)',
+		},
+		'.scroll-ml-safe': {
+			scrollMarginLeft: 'env(safe-area-inset-left)',
+		},
+		'.scroll-p-safe': {
+			scrollPaddingTop: 'env(safe-area-inset-top)',
+			scrollPaddingRight: 'env(safe-area-inset-right)',
+			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
+			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		},
+		'.scroll-px-safe': {
+			scrollPaddingRight: 'env(safe-area-inset-right)',
+			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		},
+		'.scroll-py-safe': {
+			scrollPaddingTop: 'env(safe-area-inset-top)',
+			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
+		},
+		'.scroll-pt-safe': {
+			scrollPaddingTop: 'env(safe-area-inset-top)',
+		},
+		'.scroll-pr-safe': {
+			scrollPaddingRight: 'env(safe-area-inset-right)',
+		},
+		'.scroll-pb-safe': {
+			scrollPaddingBottom: 'env(safe-area-inset-bottom)',
+		},
+		'.scroll-pl-safe': {
+			scrollPaddingLeft: 'env(safe-area-inset-left)',
+		},
 		'.top-safe': {
 			top: 'env(safe-area-inset-top)',
 		},
