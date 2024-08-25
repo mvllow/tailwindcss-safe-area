@@ -13,7 +13,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "ava",
-		"release": "npx np@latest --no-tests"
+		"release": "npx np@latest"
 	},
 	"engines": {
 		"node": ">=16"
