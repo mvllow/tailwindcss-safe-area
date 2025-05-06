@@ -11,7 +11,7 @@ Tailwind CSS utilities for safe areas.
 ## Getting started
 
 ```sh
-npm install --dev tailwindcss-safe-area
+npm install tailwindcss-safe-area
 ```
 
 Then add the plugin to your `tailwind.config.js` file:
