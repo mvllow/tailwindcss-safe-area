@@ -201,6 +201,15 @@ const safeArea = plugin(({ addUtilities, matchUtilities, theme }) => {
 				"-webkit-fill-available",
 			],
 		},
+		".min-h-fill-safe": {
+			minHeight: ["-webkit-fill-available"],
+		},
+		".max-h-fill-safe": {
+			maxHeight: ["-webkit-fill-available"],
+		},
+		".h-fill-safe": {
+			height: ["-webkit-fill-available"],
+		},
 		".min-h-vh-safe": {
 			minHeight: [
 				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",

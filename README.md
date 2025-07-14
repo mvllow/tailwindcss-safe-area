@@ -175,6 +175,18 @@ Screen height, using `-webkit-fill-available` on Safari:
 ```
 
 ```css
+.min-h-fill-safe {
+	min-height: -webkit-fill-available;
+}
+.max-h-fill-safe {
+	max-height: -webkit-fill-available;
+}
+.h-fill-safe {
+	height: -webkit-fill-available;
+}
+```
+
+```css
 /* vh */
 
 .min-h-vh-safe {
