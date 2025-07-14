@@ -10,8 +10,24 @@ Tailwind CSS utilities for safe areas.
 
 ## Getting started
 
+### For Tailwind CSS v4
+
 ```sh
 npm install tailwindcss-safe-area
+```
+
+Import the CSS plugin directly in your main CSS file:
+
+```css
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+```
+
+### For Tailwind CSS v3
+
+```sh
+# Latest version with v3 support
+npm install tailwindcss-safe-area@0.8.0
 ```
 
 Then add the plugin to your `tailwind.config.js` file:
@@ -37,7 +53,7 @@ To extend content behind the safe area, add or append `viewport-fit=cover` to yo
 
 ### Base utilities
 
-Handle safe area margin, padding, height and position.
+Handle safe area margin, padding, height and position:
 
 ```html
 <header class="pt-safe">...</header>
@@ -47,7 +63,7 @@ Handle safe area margin, padding, height and position.
 
 ### Offset utilities
 
-Extend base utilities with an additional offset.
+Extend base utilities with an additional offset:
 
 ```html
 <div class="pr-safe-offset-4">...</div>
@@ -57,7 +73,7 @@ This adds right padding equal to the safe area plus `4`.
 
 ### Or utilities
 
-Apply a minimum value while respecting the safe area.
+Apply a minimum value while respecting the safe area:
 
 ```html
 <div class="pb-safe-or-8">...</div>
@@ -65,267 +81,54 @@ Apply a minimum value while respecting the safe area.
 
 This adds bottom padding equal to the larger of the safe area or `8`.
 
-## Generated styles
+## Available utilities
 
-### Margin
+### Margin and padding
 
-```css
-.m-safe {
-	margin-top: env(safe-area-inset-top);
-	margin-right: env(safe-area-inset-right);
-	margin-bottom: env(safe-area-inset-bottom);
-	margin-left: env(safe-area-inset-left);
-}
-.mx-safe {
-	margin-right: env(safe-area-inset-right);
-	margin-left: env(safe-area-inset-left);
-}
-.my-safe {
-	margin-top: env(safe-area-inset-top);
-	margin-bottom: env(safe-area-inset-bottom);
-}
-.ms-safe {
-	margin-inline-start: env(safe-area-inset-left);
-}
-.me-safe {
-	margin-inline-end: env(safe-area-inset-left);
-}
-.mt-safe {
-	margin-top: env(safe-area-inset-top);
-}
-.mr-safe {
-	margin-right: env(safe-area-inset-right);
-}
-.mb-safe {
-	margin-bottom: env(safe-area-inset-bottom);
-}
-.ml-safe {
-	margin-left: env(safe-area-inset-left);
-}
-```
+**Base utilities:**
 
-### Scroll margin
+- `m-safe`, `mx-safe`, `my-safe`, `ms-safe`, `me-safe`
+- `mt-safe`, `mr-safe`, `mb-safe`, `ml-safe`
+- `p-safe`, `px-safe`, `py-safe`, `ps-safe`, `pe-safe`
+- `pt-safe`, `pr-safe`, `pb-safe`, `pl-safe`
 
-Same as [margin](#margin), prefixed with `scroll-`.
+**With variants:**
 
-### Padding
+- Add `-offset-{value}` for additional spacing (e.g. `pt-safe-offset-4`)
+- Add `-or-{value}` for minimum values (e.g. `pb-safe-or-8`)
 
-```css
-.p-safe {
-	padding-top: env(safe-area-inset-top);
-	padding-right: env(safe-area-inset-right);
-	padding-bottom: env(safe-area-inset-bottom);
-	padding-left: env(safe-area-inset-left);
-}
-.px-safe {
-	padding-right: env(safe-area-inset-right);
-	padding-left: env(safe-area-inset-left);
-}
-.py-safe {
-	padding-top: env(safe-area-inset-top);
-	padding-bottom: env(safe-area-inset-bottom);
-}
-.ps-safe {
-	padding-inline-start: env(safe-area-inset-left);
-}
-.pe-safe {
-	padding-inline-end: env(safe-area-inset-left);
-}
-.pt-safe {
-	padding-top: env(safe-area-inset-top);
-}
-.pr-safe {
-	padding-right: env(safe-area-inset-right);
-}
-.pb-safe {
-	padding-bottom: env(safe-area-inset-bottom);
-}
-.pl-safe {
-	padding-left: env(safe-area-inset-left);
-}
-```
+### Scroll margin and padding
 
-### Scroll padding
+Same as margin/padding utilities, prefixed with `scroll-`:
 
-Same as [padding](#padding), prefixed with `scroll-`.
+- `scroll-m-safe`, `scroll-mx-safe`, `scroll-my-safe`, etc.
+- `scroll-p-safe`, `scroll-px-safe`, `scroll-py-safe`, etc.
 
 ### Height
 
-Screen height, using `-webkit-fill-available` on Safari:
+**Screen height utilities:**
 
-```css
-.min-h-screen-safe {
-	min-height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-	min-height: -webkit-fill-available;
-}
-.max-h-screen-safe {
-	max-height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-	max-height: -webkit-fill-available;
-}
-.h-screen-safe {
-	height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-	height: -webkit-fill-available;
-}
-```
+- `h-screen-safe`, `min-h-screen-safe`, `max-h-screen-safe`
 
-```css
-.min-h-fill-safe {
-	min-height: -webkit-fill-available;
-}
-.max-h-fill-safe {
-	max-height: -webkit-fill-available;
-}
-.h-fill-safe {
-	height: -webkit-fill-available;
-}
-```
+**Viewport height variants:**
 
-```css
-/* vh */
+- `h-vh-safe`, `h-dvh-safe`, `h-svh-safe`, `h-lvh-safe`
+- `min-h-vh-safe`, `min-h-dvh-safe`, `min-h-svh-safe`, `min-h-lvh-safe`
+- `max-h-vh-safe`, `max-h-dvh-safe`, `max-h-svh-safe`, `max-h-lvh-safe`
 
-.min-h-vh-safe {
-	min-height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.max-h-vh-safe {
-	max-height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.h-vh-safe {
-	height: calc(
-		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
+**`-webkit-fill-available` utilities:**
 
-/* dvh */
-
-.min-h-dvh-safe {
-	min-height: calc(
-		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.max-h-dvh-safe {
-	max-height: calc(
-		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.h-dvh-safe {
-	height: calc(
-		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-
-/* svh */
-
-.min-h-svh-safe {
-	min-height: calc(
-		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.max-h-svh-safe {
-	max-height: calc(
-		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.h-svh-safe {
-	height: calc(
-		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-
-/* lvh */
-
-.min-h-lvh-safe {
-	min-height: calc(
-		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.max-h-lvh-safe {
-	max-height: calc(
-		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-.h-lvh-safe {
-	height: calc(
-		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
-	);
-}
-```
+- `h-fill-safe`, `min-h-fill-safe`, `max-h-fill-safe`
 
 ### Position
 
-```css
-.inset-safe: {
-	top: env(safe-area-inset-top);
-	right: env(safe-area-inset-right);
-	bottom: env(safe-area-inset-bottom);
-	left: env(safe-area-inset-left);
-}
-.inset-x-safe: {
-	right: env(safe-area-inset-right);
-	left: env(safe-area-inset-left);
-}
-.inset-y-safe: {
-	top: env(safe-area-inset-top);
-	bottom: env(safe-area-inset-bottom);
-}
-.start-safe: {
-	inset-inline-start: env(safe-area-inset-left);
-}
-.end-safe: {
-	inset-inline-end: env(safe-area-inset-left);
-}
-.top-safe: {
-	top: env(safe-area-inset-top);
-}
-.right-safe: {
-	right: env(safe-area-inset-right);
-}
-.bottom-safe: {
-	bottom: env(safe-area-inset-bottom);
-}
-.left-safe: {
-	left: env(safe-area-inset-left);
-}
-```
+**Inset utilities:**
 
-### Variants
+- `inset-safe`, `inset-x-safe`, `inset-y-safe`
+- `start-safe`, `end-safe`
+- `top-safe`, `right-safe`, `bottom-safe`, `left-safe`
 
-Spacing-based utiltiies can be augmented with either `-offset-{value}` or `-or-{value}` suffixes.
+**With variants:**
 
-For example, using Tailwind's default spacing scale:
-
-```css
-.mr-safe-offset-8 {
-	margin-right: calc(env(safe-area-inset-right) + 2rem);
-}
-.pb-safe-or-20 {
-	padding-bottom: max(env(safe-area-inset-right), 5rem);
-}
-```
-
-## Troubleshooting
-
-The height utilities may not always work as expected. Add the following global CSS for the correct behaviour:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-	html,
-	body,
-	#root {
-		height: -webkit-fill-available;
-	}
-}
-```
+- Add `-offset-{value}` for additional spacing (e.g., `top-safe-offset-4`)
+- Add `-or-{value}` for minimum values (e.g., `inset-safe-or-8`)
