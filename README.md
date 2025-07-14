@@ -151,6 +151,8 @@ Same as [padding](#padding), prefixed with `scroll-`.
 
 ### Height
 
+Screen height, using `-webkit-fill-available` on Safari:
+
 ```css
 .min-h-screen-safe {
 	min-height: calc(
@@ -169,6 +171,80 @@ Same as [padding](#padding), prefixed with `scroll-`.
 		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
 	);
 	height: -webkit-fill-available;
+}
+```
+
+```css
+/* vh */
+
+.min-h-vh-safe {
+	min-height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.max-h-vh-safe {
+	max-height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.h-vh-safe {
+	height: calc(
+		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+
+/* dvh */
+
+.min-h-dvh-safe {
+	min-height: calc(
+		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.max-h-dvh-safe {
+	max-height: calc(
+		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.h-dvh-safe {
+	height: calc(
+		100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+
+/* svh */
+
+.min-h-svh-safe {
+	min-height: calc(
+		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.max-h-svh-safe {
+	max-height: calc(
+		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.h-svh-safe {
+	height: calc(
+		100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+
+/* lvh */
+
+.min-h-lvh-safe {
+	min-height: calc(
+		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.max-h-lvh-safe {
+	max-height: calc(
+		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
+}
+.h-lvh-safe {
+	height: calc(
+		100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+	);
 }
 ```
 
