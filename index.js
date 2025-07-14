@@ -201,6 +201,66 @@ const safeArea = plugin(({ addUtilities, matchUtilities, theme }) => {
 				"-webkit-fill-available",
 			],
 		},
+		".min-h-vh-safe": {
+			minHeight: [
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".max-h-vh-safe": {
+			maxHeight: [
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".h-vh-safe": {
+			height: [
+				"calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".min-h-dvh-safe": {
+			minHeight: [
+				"calc(100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".max-h-dvh-safe": {
+			maxHeight: [
+				"calc(100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".h-dvh-safe": {
+			height: [
+				"calc(100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".min-h-svh-safe": {
+			minHeight: [
+				"calc(100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".max-h-svh-safe": {
+			maxHeight: [
+				"calc(100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".h-svh-safe": {
+			height: [
+				"calc(100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".min-h-lvh-safe": {
+			minHeight: [
+				"calc(100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".max-h-lvh-safe": {
+			maxHeight: [
+				"calc(100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
+		".h-lvh-safe": {
+			height: [
+				"calc(100lvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))",
+			],
+		},
 	};
 	addUtilities(baseUtilities);
 
