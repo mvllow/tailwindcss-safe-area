@@ -1,6 +1,6 @@
 {
 	"name": "tailwindcss-safe-area",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
 	"repository": "mvllow/tailwindcss-safe-area",
