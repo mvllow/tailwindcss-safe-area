@@ -14,11 +14,13 @@
 		"index.css"
 	],
 	"scripts": {
+		"test": "node --test",
 		"release": "npx np@latest --no-tests"
 	},
 	"engines": {
 		"node": ">=22"
 	},
+	"type": "module",
 	"keywords": [
 		"tailwindcss",
 		"tailwindcss-plugin",
@@ -30,5 +32,9 @@
 	],
 	"peerDependencies": {
 		"tailwindcss": "^4.0.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/cli": "^4.1.11",
+		"prettier": "^3.6.2"
 	}
 }
