@@ -3,7 +3,10 @@
 	"version": "1.0.0-0",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
-	"repository": "mvllow/tailwindcss-safe-area",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mvllow/tailwindcss-safe-area.git"
+	},
 	"funding": "https://github.com/sponsors/mvllow",
 	"author": {
 		"name": "mvllow",
