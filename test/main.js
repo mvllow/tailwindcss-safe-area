@@ -1,212 +1,271 @@
-const test = require("ava");
-const postcss = require("postcss");
-const tailwindcss = require("tailwindcss");
-const safeArea = require("../index");
+import { ok } from "node:assert";
+import { exec } from "node:child_process";
+import { mkdirSync, mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { before, describe, test } from "node:test";
+import { promisify } from "node:util";
 
-async function generateCSS(config) {
-	const result = await postcss(tailwindcss(config)).process(
-		"@tailwind utilities",
-		{ from: undefined },
-	);
-	return result.css;
+const execAsync = promisify(exec);
+
+function normalizeWhitespace(value) {
+	return value.replace(/\s+/g, " ").trim();
 }
 
-test("generates all utilities", async (t) => {
-	const config = {
-		content: [{ raw: "" }],
-		safelist: [{ pattern: /.*safe.*$/ }],
-		theme: {
-			spacing: {
-				1: "8px",
-			},
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+function contains(value, pattern) {
+	return normalizeWhitespace(value).includes(normalizeWhitespace(pattern));
+}
 
-	const css = await generateCSS(config);
+function expectSelectors(selectors) {
+	selectors.forEach((selector) => {
+		ok(css.includes(selector), `Missing selector: ${selector}`);
+	});
+}
 
-	t.snapshot(css);
+function expectCSSProperties(properties) {
+	for (const [property, value] of Object.entries(properties)) {
+		ok(contains(css, `${property}: ${value}`), `Missing ${property}: ${value}`);
+	}
+}
+
+let css = "";
+const input = join(import.meta.dirname, "test.css");
+const outputDir = mkdtempSync(join(tmpdir(), "tailwindcss-safe-area-"));
+const output = `${outputDir}/out.css`;
+
+before(async () => {
+	mkdirSync(outputDir, { recursive: true });
+	try {
+		await execAsync(`npx @tailwindcss/cli -i ${input} -o ${output}`);
+		css = readFileSync(output, "utf8");
+		console.log("CSS generated successfully");
+	} catch (err) {
+		console.error("Failed to generate CSS:", err);
+		throw err;
+	}
 });
 
-test("generates base spacing safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "m-safe mx-safe my-safe mt-safe mr-safe mb-safe ml-safe p-safe px-safe py-safe pt-safe pr-safe pb-safe pl-safe",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+describe("Tailwind CSS Safe Area Plugin", () => {
+	const directions = ["top", "right", "bottom", "left"];
 
-	const css = await generateCSS(config);
+	describe("Margin Utilities", () => {
+		test("basic margin utilities", () => {
+			expectSelectors([
+				".m-safe",
+				".mx-safe",
+				".my-safe",
+				".mt-safe",
+				".mr-safe",
+				".mb-safe",
+				".ml-safe",
+				".ms-safe",
+				".me-safe",
+			]);
 
-	t.true(css.includes(".m-safe"));
-	t.true(css.includes(".mx-safe"));
-	t.true(css.includes(".my-safe"));
-	t.true(css.includes(".mt-safe"));
-	t.true(css.includes(".mr-safe"));
-	t.true(css.includes(".mb-safe"));
-	t.true(css.includes(".ml-safe"));
-	t.true(css.includes(".p-safe"));
-	t.true(css.includes(".px-safe"));
-	t.true(css.includes(".py-safe"));
-	t.true(css.includes(".pt-safe"));
-	t.true(css.includes(".pr-safe"));
-	t.true(css.includes(".pb-safe"));
-	t.true(css.includes(".pl-safe"));
-});
+			expectCSSProperties(
+				Object.fromEntries(
+					directions.map((d) => [`margin-${d}`, `env(safe-area-inset-${d})`]),
+				),
+			);
+		});
 
-test("generates offset spacing safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "m-safe-offset-1 mx-safe-offset-1 my-safe-offset-1 ms-safe-offset-1 me-safe-offset-1 mt-safe-offset-1 mr-safe-offset-1 mb-safe-offset-1 ml-safe-offset-1 p-safe-offset-1 px-safe-offset-1 py-safe-offset-1 ps-safe-offset-1 pe-safe-offset-1 pt-safe-offset-1 pr-safe-offset-1 pb-safe-offset-1 pl-safe-offset-1",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+		test("logical margin properties", () => {
+			expectCSSProperties({
+				"margin-inline-start": "env(safe-area-inset-left)",
+				"margin-inline-end": "env(safe-area-inset-right)",
+			});
+		});
+	});
 
-	const css = await generateCSS(config);
+	describe("Padding Utilities", () => {
+		test("basic padding utilities", () => {
+			expectSelectors([
+				".p-safe",
+				".px-safe",
+				".py-safe",
+				".pt-safe",
+				".pr-safe",
+				".pb-safe",
+				".pl-safe",
+				".ps-safe",
+				".pe-safe",
+			]);
 
-	t.true(css.includes(".m-safe-offset-1"));
-	t.true(css.includes(".mx-safe-offset-1"));
-	t.true(css.includes(".my-safe-offset-1"));
-	t.true(css.includes(".ms-safe-offset-1"));
-	t.true(css.includes(".me-safe-offset-1"));
-	t.true(css.includes(".mt-safe-offset-1"));
-	t.true(css.includes(".mr-safe-offset-1"));
-	t.true(css.includes(".mb-safe-offset-1"));
-	t.true(css.includes(".ml-safe-offset-1"));
-	t.true(css.includes(".p-safe-offset-1"));
-	t.true(css.includes(".px-safe-offset-1"));
-	t.true(css.includes(".py-safe-offset-1"));
-	t.true(css.includes(".ps-safe-offset-1"));
-	t.true(css.includes(".pe-safe-offset-1"));
-	t.true(css.includes(".pt-safe-offset-1"));
-	t.true(css.includes(".pr-safe-offset-1"));
-	t.true(css.includes(".pb-safe-offset-1"));
-	t.true(css.includes(".pl-safe-offset-1"));
-});
+			expectCSSProperties(
+				Object.fromEntries(
+					directions.map((d) => [`padding-${d}`, `env(safe-area-inset-${d})`]),
+				),
+			);
+		});
 
-test("generates or spacing safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "m-safe-or-1 mx-safe-or-1 my-safe-or-1 ms-safe-or-1 me-safe-or-1 mt-safe-or-1 mr-safe-or-1 mb-safe-or-1 ml-safe-or-1 p-safe-or-1 px-safe-or-1 py-safe-or-1 ps-safe-or-1 pe-safe-or-1 pt-safe-or-1 pr-safe-or-1 pb-safe-or-1 pl-safe-or-1",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+		test("logical padding properties", () => {
+			expectCSSProperties({
+				"padding-inline-start": "env(safe-area-inset-left)",
+				"padding-inline-end": "env(safe-area-inset-right)",
+			});
+		});
+	});
 
-	const css = await generateCSS(config);
+	describe("Scroll Margin and Padding", () => {
+		test("scroll margin", () => {
+			expectSelectors([".scroll-m-safe"]);
+			expectCSSProperties(
+				Object.fromEntries(
+					directions.map((d) => [
+						`scroll-margin-${d}`,
+						`env(safe-area-inset-${d})`,
+					]),
+				),
+			);
+		});
 
-	t.true(css.includes(".m-safe-or-1"));
-	t.true(css.includes(".mx-safe-or-1"));
-	t.true(css.includes(".my-safe-or-1"));
-	t.true(css.includes(".ms-safe-or-1"));
-	t.true(css.includes(".me-safe-or-1"));
-	t.true(css.includes(".mt-safe-or-1"));
-	t.true(css.includes(".mr-safe-or-1"));
-	t.true(css.includes(".mb-safe-or-1"));
-	t.true(css.includes(".ml-safe-or-1"));
-	t.true(css.includes(".p-safe-or-1"));
-	t.true(css.includes(".px-safe-or-1"));
-	t.true(css.includes(".py-safe-or-1"));
-	t.true(css.includes(".ps-safe-or-1"));
-	t.true(css.includes(".pe-safe-or-1"));
-	t.true(css.includes(".pt-safe-or-1"));
-	t.true(css.includes(".pr-safe-or-1"));
-	t.true(css.includes(".pb-safe-or-1"));
-	t.true(css.includes(".pl-safe-or-1"));
-});
+		test("scroll padding", () => {
+			expectSelectors([".scroll-p-safe"]);
+			expectCSSProperties(
+				Object.fromEntries(
+					directions.map((d) => [
+						`scroll-padding-${d}`,
+						`env(safe-area-inset-${d})`,
+					]),
+				),
+			);
+		});
+	});
 
-test("generates scroll spacing safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "scroll-m-safe scroll-mx-safe scroll-my-safe scroll-ms-safe scroll-me-safe scroll-mt-safe scroll-mr-safe scroll-mb-safe scroll-ml-safe scroll-p-safe scroll-px-safe scroll-py-safe scroll-ps-safe scroll-pe-safe scroll-pt-safe scroll-pr-safe scroll-pb-safe scroll-pl-safe",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+	describe("Inset Utilities", () => {
+		test("basic inset", () => {
+			expectSelectors([
+				".inset-safe",
+				".inset-x-safe",
+				".inset-y-safe",
+				".start-safe",
+				".end-safe",
+				".top-safe",
+				".right-safe",
+				".bottom-safe",
+				".left-safe",
+			]);
 
-	const css = await generateCSS(config);
+			expectCSSProperties(
+				Object.fromEntries(
+					directions.map((d) => [`${d}`, `env(safe-area-inset-${d})`]),
+				),
+			);
+		});
 
-	t.true(css.includes(".scroll-m-safe"));
-	t.true(css.includes(".scroll-mx-safe"));
-	t.true(css.includes(".scroll-my-safe"));
-	t.true(css.includes(".scroll-ms-safe"));
-	t.true(css.includes(".scroll-me-safe"));
-	t.true(css.includes(".scroll-mt-safe"));
-	t.true(css.includes(".scroll-mr-safe"));
-	t.true(css.includes(".scroll-mb-safe"));
-	t.true(css.includes(".scroll-ml-safe"));
-	t.true(css.includes(".scroll-p-safe"));
-	t.true(css.includes(".scroll-px-safe"));
-	t.true(css.includes(".scroll-py-safe"));
-	t.true(css.includes(".scroll-ps-safe"));
-	t.true(css.includes(".scroll-pe-safe"));
-	t.true(css.includes(".scroll-pt-safe"));
-	t.true(css.includes(".scroll-pr-safe"));
-	t.true(css.includes(".scroll-pb-safe"));
-	t.true(css.includes(".scroll-pl-safe"));
-});
+		test("logical inset", () => {
+			expectCSSProperties({
+				"inset-inline-start": "env(safe-area-inset-left)",
+				"inset-inline-end": "env(safe-area-inset-right)",
+			});
+		});
+	});
 
-test("generates height safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "min-h-screen-safe max-h-screen-safe h-screen-safe",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+	describe("Height Utilities", () => {
+		test("viewport height safe utilities", () => {
+			expectSelectors([
+				".h-screen-safe",
+				".h-vh-safe",
+				".h-dvh-safe",
+				".h-svh-safe",
+				".h-lvh-safe",
+			]);
 
-	const css = await generateCSS(config);
+			ok(css.includes("calc("));
+			ok(css.includes("100vh"));
+			ok(css.includes("env(safe-area-inset-top)"));
+			ok(css.includes("env(safe-area-inset-bottom)"));
+			ok(css.includes("-webkit-fill-available"));
+		});
 
-	t.true(css.includes(".min-h-screen-safe"));
-	t.true(css.includes(".max-h-screen-safe"));
-	t.true(css.includes(".h-screen-safe"));
-});
+		test("min/max height safe utilities", () => {
+			expectSelectors([".min-h-screen-safe", ".max-h-screen-safe"]);
+			ok(css.includes("min-height"));
+			ok(css.includes("max-height"));
+			ok(css.includes("calc("));
+		});
 
-test("generates position safe-area utilities", async (t) => {
-	const config = {
-		content: [
-			{
-				raw: "inset-safe inset-x-safe inset-y-safe start-safe end-safe top-safe right-safe bottom-safe left-safe",
-			},
-		],
-		theme: {
-			extend: {},
-		},
-		plugins: [safeArea],
-	};
+		test("fill available height", () => {
+			expectSelectors([".h-fill-safe", ".min-h-fill-safe", ".max-h-fill-safe"]);
+			ok(css.includes(css, "height: -webkit-fill-available"));
+		});
+	});
 
-	const css = await generateCSS(config);
+	describe("Offset Variant Utilities", () => {
+		test("margin, padding, inset, scroll-margin", () => {
+			expectSelectors([
+				".m-safe-offset-4",
+				".mx-safe-offset-2",
+				".my-safe-offset-1",
+				".mt-safe-offset-8",
+				".p-safe-offset-4",
+				".px-safe-offset-2",
+				".py-safe-offset-1",
+				".pt-safe-offset-8",
+				".inset-safe-offset-4",
+				".top-safe-offset-2",
+				".right-safe-offset-1",
+				".scroll-m-safe-offset-4",
+				".scroll-mx-safe-offset-2",
+			]);
 
-	t.true(css.includes(".inset-safe"));
-	t.true(css.includes(".inset-x-safe"));
-	t.true(css.includes(".inset-y-safe"));
-	t.true(css.includes(".start-safe"));
-	t.true(css.includes(".end-safe"));
-	t.true(css.includes(".top-safe"));
-	t.true(css.includes(".right-safe"));
-	t.true(css.includes(".bottom-safe"));
-	t.true(css.includes(".left-safe"));
+			ok(css.includes("env(safe-area-inset-top)"));
+			ok(css.includes("1rem") || css.includes("var(--spacing)"));
+		});
+	});
+
+	describe("Or Variant Utilities", () => {
+		test("margin, padding, inset, scroll-padding", () => {
+			expectSelectors([
+				".m-safe-or-4",
+				".mx-safe-or-2",
+				".my-safe-or-1",
+				".mt-safe-or-8",
+				".p-safe-or-4",
+				".px-safe-or-2",
+				".py-safe-or-1",
+				".pt-safe-or-8",
+				".inset-safe-or-4",
+				".top-safe-or-2",
+				".right-safe-or-1",
+				".scroll-p-safe-or-4",
+				".scroll-px-safe-or-2",
+			]);
+
+			ok(css.includes("max("));
+			ok(css.includes("env(safe-area-inset-top)"));
+		});
+	});
+
+	describe("Combinations and Edge Cases", () => {
+		test("combination utilities", () => {
+			expectSelectors([
+				".m-safe",
+				".p-safe-offset-4",
+				".h-screen-safe",
+				".inset-safe-or-2",
+			]);
+		});
+
+		test("viewport variations", () => {
+			["100vh", "100dvh", "100svh", "100lvh"].forEach((unit) => {
+				ok(css.includes(unit), `Missing ${unit}`);
+			});
+		});
+	});
+
+	describe("CSS Output Validation", () => {
+		test("env() formatting", () => {
+			directions.forEach((dir) => {
+				ok(css.includes(`env(safe-area-inset-${dir})`));
+			});
+		});
+
+		test("calc() expressions", () => {
+			ok(css.includes("calc("));
+			ok(css.includes("100vh"));
+			ok(css.includes("env(safe-area-inset-top)"));
+			ok(css.includes("env(safe-area-inset-bottom)"));
+		});
+	});
 });

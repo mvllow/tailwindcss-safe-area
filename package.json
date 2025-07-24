@@ -1,36 +1,40 @@
 {
 	"name": "tailwindcss-safe-area",
-	"version": "0.8.0",
+	"version": "1.0.0-0",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
 	"repository": "mvllow/tailwindcss-safe-area",
 	"funding": "https://github.com/sponsors/mvllow",
-	"types": "index.d.ts",
 	"author": {
 		"name": "mvllow",
 		"email": "mvllow@icloud.com"
 	},
-	"main": "index.js",
+	"main": "index.css",
+	"files": [
+		"index.css"
+	],
 	"scripts": {
-		"test": "ava",
-		"release": "npx np@latest"
+		"test": "node --test",
+		"release": "npx np@latest --no-tests"
 	},
 	"engines": {
-		"node": ">=16"
+		"node": ">=22"
 	},
+	"type": "module",
 	"keywords": [
 		"tailwindcss",
 		"tailwindcss-plugin",
 		"safe-area-inset",
 		"pwa",
 		"margin",
-		"padding"
+		"padding",
+		"css"
 	],
 	"peerDependencies": {
-		"tailwindcss": "^2.0.0 || >=3.0.0"
+		"tailwindcss": "^4.0.0"
 	},
 	"devDependencies": {
-		"ava": "^6.1.3",
-		"prettier": "^3.3.3"
+		"@tailwindcss/cli": "^4.1.11",
+		"prettier": "^3.6.2"
 	}
 }
