@@ -5,8 +5,8 @@ Tailwind CSS utilities for safe areas.
 ## Features
 
 - **Responsive safe area utilities** tailored for margin, padding, height and position
-- **Flexible spacing helpers** to extend safe areas or ensure content remains unobstructed with offset and minimum value variants
-- **Modern CSS support**, including `inline-start`, `inline-end`, `scroll-margin`, `scroll-padding` and more to handle modern layouts
+- **Flexible spacing helpers** using `offset` and `or` variants that adapt to safe areas
+- **Modern CSS support** including [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values) and [scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap)
 
 ## Getting started
 
