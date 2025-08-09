@@ -23,6 +23,8 @@ Import the CSS plugin directly in your main CSS file:
 @import "tailwindcss-safe-area";
 ```
 
+_Note: we use `@import` above rather than `@plugin`_
+
 ### For Tailwind CSS v3
 
 ```sh
