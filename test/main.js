@@ -63,7 +63,10 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [`margin-${d}`, `env(safe-area-inset-${d})`]),
+				directions.map((d) => [
+					`margin-${d}`,
+					`var(--twsa-safe-area-inset-${d})`,
+				]),
 			),
 		);
 	});
@@ -85,7 +88,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`margin-${d}`,
-					`calc(env(safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -93,15 +96,15 @@ describe("Safe Area Utilities", () => {
 
 	test("logical margin", () => {
 		expectCSSProperties({
-			"margin-inline-start": "env(safe-area-inset-left)",
-			"margin-inline-end": "env(safe-area-inset-right)",
+			"margin-inline-start": "var(--twsa-safe-area-inset-left)",
+			"margin-inline-end": "var(--twsa-safe-area-inset-right)",
 		});
 	});
 
 	test("negative logical margin", () => {
 		expectCSSProperties({
-			"margin-inline-start": "calc(env(safe-area-inset-left) * -1)",
-			"margin-inline-end": "calc(env(safe-area-inset-right) * -1)",
+			"margin-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
+			"margin-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
 		});
 	});
 
@@ -120,7 +123,10 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [`padding-${d}`, `env(safe-area-inset-${d})`]),
+				directions.map((d) => [
+					`padding-${d}`,
+					`var(--twsa-safe-area-inset-${d})`,
+				]),
 			),
 		);
 	});
@@ -142,7 +148,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`padding-${d}`,
-					`calc(env(safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -150,15 +156,15 @@ describe("Safe Area Utilities", () => {
 
 	test("logical padding", () => {
 		expectCSSProperties({
-			"padding-inline-start": "env(safe-area-inset-left)",
-			"padding-inline-end": "env(safe-area-inset-right)",
+			"padding-inline-start": "var(--twsa-safe-area-inset-left)",
+			"padding-inline-end": "var(--twsa-safe-area-inset-right)",
 		});
 	});
 
 	test("negative logical padding", () => {
 		expectCSSProperties({
-			"padding-inline-start": "calc(env(safe-area-inset-left) * -1)",
-			"padding-inline-end": "calc(env(safe-area-inset-right) * -1)",
+			"padding-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
+			"padding-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
 		});
 	});
 
@@ -168,7 +174,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-margin-${d}`,
-					`env(safe-area-inset-${d})`,
+					`var(--twsa-safe-area-inset-${d})`,
 				]),
 			),
 		);
@@ -180,7 +186,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-margin-${d}`,
-					`calc(env(safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -192,7 +198,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-padding-${d}`,
-					`env(safe-area-inset-${d})`,
+					`var(--twsa-safe-area-inset-${d})`,
 				]),
 			),
 		);
@@ -204,7 +210,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-padding-${d}`,
-					`calc(env(safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -225,7 +231,7 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [`${d}`, `env(safe-area-inset-${d})`]),
+				directions.map((d) => [`${d}`, `var(--twsa-safe-area-inset-${d})`]),
 			),
 		);
 	});
@@ -245,22 +251,25 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [`${d}`, `calc(env(safe-area-inset-${d}) * -1)`]),
+				directions.map((d) => [
+					`${d}`,
+					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
+				]),
 			),
 		);
 	});
 
 	test("logical inset", () => {
 		expectCSSProperties({
-			"inset-inline-start": "env(safe-area-inset-left)",
-			"inset-inline-end": "env(safe-area-inset-right)",
+			"inset-inline-start": "var(--twsa-safe-area-inset-left)",
+			"inset-inline-end": "var(--twsa-safe-area-inset-right)",
 		});
 	});
 
 	test("negative logical inset", () => {
 		expectCSSProperties({
-			"inset-inline-start": "calc(env(safe-area-inset-left) * -1)",
-			"inset-inline-end": "calc(env(safe-area-inset-right) * -1)",
+			"inset-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
+			"inset-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
 		});
 	});
 
@@ -280,8 +289,8 @@ describe("Safe Area Utilities", () => {
 
 		ok(css.includes("calc("));
 		ok(css.includes("100vh"));
-		ok(css.includes("env(safe-area-inset-top)"));
-		ok(css.includes("env(safe-area-inset-bottom)"));
+		ok(css.includes("var(--twsa-safe-area-inset-top)"));
+		ok(css.includes("var(--twsa-safe-area-inset-bottom)"));
 		ok(css.includes("-webkit-fill-available"));
 		ok(css.includes("min-height"));
 		ok(css.includes("max-height"));
@@ -327,5 +336,52 @@ describe("Safe Area Utilities", () => {
 		]);
 
 		ok(css.includes("min("));
+	});
+
+	test("CSS custom property defaults", () => {
+		expectCSSProperties({
+			"--twsa-safe-area-inset-top": "env(safe-area-inset-top)",
+			"--twsa-safe-area-inset-right": "env(safe-area-inset-right)",
+			"--twsa-safe-area-inset-bottom": "env(safe-area-inset-bottom)",
+			"--twsa-safe-area-inset-left": "env(safe-area-inset-left)",
+		});
+	});
+
+	test("safe area enable", () => {
+		expectSelectors([
+			".safe",
+			".safe-x",
+			".safe-y",
+			".safe-top",
+			".safe-right",
+			".safe-bottom",
+			".safe-left",
+		]);
+
+		expectCSSProperties({
+			"--twsa-safe-area-inset-top": "env(safe-area-inset-top)",
+			"--twsa-safe-area-inset-right": "env(safe-area-inset-right)",
+			"--twsa-safe-area-inset-bottom": "env(safe-area-inset-bottom)",
+			"--twsa-safe-area-inset-left": "env(safe-area-inset-left)",
+		});
+	});
+
+	test("safe area disable", () => {
+		expectSelectors([
+			".safe-none",
+			".safe-x-none",
+			".safe-y-none",
+			".safe-top-none",
+			".safe-right-none",
+			".safe-bottom-none",
+			".safe-left-none",
+		]);
+
+		expectCSSProperties({
+			"--twsa-safe-area-inset-top": "0px",
+			"--twsa-safe-area-inset-right": "0px",
+			"--twsa-safe-area-inset-bottom": "0px",
+			"--twsa-safe-area-inset-left": "0px",
+		});
 	});
 });
