@@ -21,16 +21,16 @@
 	--twsa-safe-area-inset-top: env(safe-area-inset-top);
 	--twsa-safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
-@utility safe-top {
+@utility safe-t {
 	--twsa-safe-area-inset-top: env(safe-area-inset-top);
 }
-@utility safe-right {
+@utility safe-r {
 	--twsa-safe-area-inset-right: env(safe-area-inset-right);
 }
-@utility safe-bottom {
+@utility safe-b {
 	--twsa-safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
-@utility safe-left {
+@utility safe-l {
 	--twsa-safe-area-inset-left: env(safe-area-inset-left);
 }
 
@@ -49,16 +49,16 @@
 	--twsa-safe-area-inset-top: 0px;
 	--twsa-safe-area-inset-bottom: 0px;
 }
-@utility safe-top-none {
+@utility safe-t-none {
 	--twsa-safe-area-inset-top: 0px;
 }
-@utility safe-right-none {
+@utility safe-r-none {
 	--twsa-safe-area-inset-right: 0px;
 }
-@utility safe-bottom-none {
+@utility safe-b-none {
 	--twsa-safe-area-inset-bottom: 0px;
 }
-@utility safe-left-none {
+@utility safe-l-none {
 	--twsa-safe-area-inset-left: 0px;
 }
 

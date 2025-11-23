@@ -352,10 +352,10 @@ describe("Safe Area Utilities", () => {
 			".safe",
 			".safe-x",
 			".safe-y",
-			".safe-top",
-			".safe-right",
-			".safe-bottom",
-			".safe-left",
+			".safe-t",
+			".safe-r",
+			".safe-b",
+			".safe-l",
 		]);
 
 		expectCSSProperties({
@@ -371,10 +371,10 @@ describe("Safe Area Utilities", () => {
 			".safe-none",
 			".safe-x-none",
 			".safe-y-none",
-			".safe-top-none",
-			".safe-right-none",
-			".safe-bottom-none",
-			".safe-left-none",
+			".safe-t-none",
+			".safe-r-none",
+			".safe-b-none",
+			".safe-l-none",
 		]);
 
 		expectCSSProperties({
