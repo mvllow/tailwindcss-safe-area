@@ -1849,3 +1849,176 @@
 		calc(--spacing(--value(integer, [integer])) * -1)
 	);
 }
+
+
+/* Base border utilities */
+@utility border-safe {
+	border-top-width: var(--twsa-safe-area-inset-top);
+	border-right-width: var(--twsa-safe-area-inset-right);
+	border-bottom-width: var(--twsa-safe-area-inset-bottom);
+	border-left-width: var(--twsa-safe-area-inset-left);
+}
+@utility border-x-safe {
+	border-right-width: var(--twsa-safe-area-inset-right);
+	border-left-width: var(--twsa-safe-area-inset-left);
+}
+@utility border-y-safe {
+	border-top-width: var(--twsa-safe-area-inset-top);
+	border-bottom-width: var(--twsa-safe-area-inset-bottom);
+}
+@utility border-s-safe {
+	border-inline-start-width: var(--twsa-safe-area-inset-left);
+}
+@utility border-e-safe {
+	border-inline-end-width: var(--twsa-safe-area-inset-right);
+}
+@utility border-t-safe {
+	border-top-width: var(--twsa-safe-area-inset-top);
+}
+@utility border-r-safe {
+	border-right-width: var(--twsa-safe-area-inset-right);
+}
+@utility border-b-safe {
+	border-bottom-width: var(--twsa-safe-area-inset-bottom);
+}
+@utility border-l-safe {
+	border-left-width: var(--twsa-safe-area-inset-left);
+}
+
+/* Border utilities with offset variant */
+@utility border-safe-offset-* {
+	border-top-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+	);
+	border-right-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+	);
+	border-bottom-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+	);
+	border-left-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+	);
+}
+@utility border-x-safe-offset-* {
+	border-right-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+	);
+	border-left-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+	);
+}
+@utility border-y-safe-offset-* {
+	border-top-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+	);
+	border-bottom-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+	);
+}
+@utility border-s-safe-offset-* {
+	border-inline-start-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+	);
+}
+@utility border-e-safe-offset-* {
+	border-inline-end-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+	);
+}
+@utility border-t-safe-offset-* {
+	border-top-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+	);
+}
+@utility border-r-safe-offset-* {
+	border-right-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+	);
+}
+@utility border-b-safe-offset-* {
+	border-bottom-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+	);
+}
+@utility border-l-safe-offset-* {
+	border-left-width: --spacing(
+		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+	);
+}
+
+/* Border utilities with or variant */
+@utility border-safe-or-* {
+	border-top-width: max(
+		var(--twsa-safe-area-inset-top),
+		--spacing(--value(integer, [integer]))
+	);
+	border-right-width: max(
+		var(--twsa-safe-area-inset-right),
+		--spacing(--value(integer, [integer]))
+	);
+	border-bottom-width: max(
+		var(--twsa-safe-area-inset-bottom),
+		--spacing(--value(integer, [integer]))
+	);
+	border-left-width: max(
+		var(--twsa-safe-area-inset-left),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-x-safe-or-* {
+	border-right-width: max(
+		var(--twsa-safe-area-inset-right),
+		--spacing(--value(integer, [integer]))
+	);
+	border-left-width: max(
+		var(--twsa-safe-area-inset-left),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-y-safe-or-* {
+	border-top-width: max(
+		var(--twsa-safe-area-inset-top),
+		--spacing(--value(integer, [integer]))
+	);
+	border-bottom-width: max(
+		var(--twsa-safe-area-inset-bottom),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-s-safe-or-* {
+	border-inline-start-width: max(
+		var(--twsa-safe-area-inset-left),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-e-safe-or-* {
+	border-inline-end-width: max(
+		var(--twsa-safe-area-inset-right),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-t-safe-or-* {
+	border-top-width: max(
+		var(--twsa-safe-area-inset-top),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-r-safe-or-* {
+	border-right-width: max(
+		var(--twsa-safe-area-inset-right),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-b-safe-or-* {
+	border-bottom-width: max(
+		var(--twsa-safe-area-inset-bottom),
+		--spacing(--value(integer, [integer]))
+	);
+}
+@utility border-l-safe-or-* {
+	border-left-width: max(
+		var(--twsa-safe-area-inset-left),
+		--spacing(--value(integer, [integer]))
+	);
+}

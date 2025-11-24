@@ -384,4 +384,57 @@ describe("Safe Area Utilities", () => {
 			"--twsa-safe-area-inset-left": "0px",
 		});
 	});
+
+	test("border", () => {
+		expectSelectors([
+			".border-safe",
+			".border-x-safe",
+			".border-y-safe",
+			".border-s-safe",
+			".border-e-safe",
+			".border-t-safe",
+			".border-r-safe",
+			".border-b-safe",
+			".border-l-safe",
+		]);
+
+		expectCSSProperties(
+			Object.fromEntries(
+				directions.map((d) => [
+					`border-${d}-width`,
+					`var(--twsa-safe-area-inset-${d})`,
+				]),
+			),
+		);
+	});
+
+	test("border offset", () => {
+		expectSelectors([
+			".border-safe-offset-4",
+			".border-x-safe-offset-4",
+			".border-y-safe-offset-4",
+			".border-s-safe-offset-4",
+			".border-e-safe-offset-4",
+			".border-t-safe-offset-4",
+			".border-r-safe-offset-4",
+			".border-b-safe-offset-4",
+			".border-l-safe-offset-4",
+		]);
+	});
+
+	test("border or", () => {
+		expectSelectors([
+			".border-safe-or-4",
+			".border-x-safe-or-4",
+			".border-y-safe-or-4",
+			".border-s-safe-or-4",
+			".border-e-safe-or-4",
+			".border-t-safe-or-4",
+			".border-r-safe-or-4",
+			".border-b-safe-or-4",
+			".border-l-safe-or-4",
+		]);
+
+		ok(css.includes("max("));
+	});
 });
