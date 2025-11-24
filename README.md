@@ -134,3 +134,10 @@ Same as margin/padding utilities, prefixed with `scroll-`:
 
 - Add `-offset-{value}` for additional spacing (e.g., `top-safe-offset-4`)
 - Add `-or-{value}` for minimum values (e.g., `inset-safe-or-8`)
+
+### Enable/disable safe area
+
+- `safe`, `safe-x`, `safe-y`
+- `safe-t`, `safe-r`, `safe-b`, `safe-l`
+- `safe-none`, `safe-x-none`, `safe-y-none`
+- `safe-t-none`, `safe-r-none`, `safe-b-none`, `safe-l-none`
