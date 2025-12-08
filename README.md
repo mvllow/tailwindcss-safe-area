@@ -87,8 +87,6 @@ This adds bottom padding equal to the larger of the safe area or `8`.
 
 ### Margin and padding
 
-**Base utilities:**
-
 - `m-safe`, `mx-safe`, `my-safe`, `ms-safe`, `me-safe`
 - `mt-safe`, `mr-safe`, `mb-safe`, `ml-safe`
 - `p-safe`, `px-safe`, `py-safe`, `ps-safe`, `pe-safe`
@@ -108,11 +106,11 @@ Same as margin/padding utilities, prefixed with `scroll-`:
 
 ### Height
 
-**Screen height utilities:**
+**Screen utilities:**
 
 - `h-screen-safe`, `min-h-screen-safe`, `max-h-screen-safe`
 
-**Viewport height variants:**
+**Viewport utilities:**
 
 - `h-vh-safe`, `h-dvh-safe`, `h-svh-safe`, `h-lvh-safe`
 - `min-h-vh-safe`, `min-h-dvh-safe`, `min-h-svh-safe`, `min-h-lvh-safe`
@@ -124,8 +122,6 @@ Same as margin/padding utilities, prefixed with `scroll-`:
 
 ### Position
 
-**Inset utilities:**
-
 - `inset-safe`, `inset-x-safe`, `inset-y-safe`
 - `start-safe`, `end-safe`
 - `top-safe`, `right-safe`, `bottom-safe`, `left-safe`
@@ -134,6 +130,17 @@ Same as margin/padding utilities, prefixed with `scroll-`:
 
 - Add `-offset-{value}` for additional spacing (e.g., `top-safe-offset-4`)
 - Add `-or-{value}` for minimum values (e.g., `inset-safe-or-8`)
+
+### Border
+
+- `border-safe`, `border-x-safe`, `border-y-safe`
+- `border-s-safe`, `border-e-safe`
+- `border-t-safe`, `border-r-safe`, `border-b-safe`, `border-l-safe`
+
+**With variants:**
+
+- Add `-offset-{value}` for additional spacing (e.g., `border-t-safe-offset-4`)
+- Add `-or-{value}` for minimum values (e.g., `border-safe-or-8`)
 
 ### Enable/disable safe area
 
