@@ -499,122 +499,122 @@
 /* Margin utilities with offset variant */
 @utility m-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -m-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 	margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility mx-safe-offset-* {
 	margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -mx-safe-offset-* {
 	margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility my-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -my-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility ms-safe-offset-* {
 	margin-inline-start: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -ms-safe-offset-* {
 	margin-inline-start: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility me-safe-offset-* {
 	margin-inline-end: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -me-safe-offset-* {
 	margin-inline-end: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility mt-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 }
 @utility -mt-safe-offset-* {
 	margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 }
 @utility mr-safe-offset-* {
 	margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -mr-safe-offset-* {
 	margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility mb-safe-offset-* {
 	margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -mb-safe-offset-* {
 	margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility ml-safe-offset-* {
 	margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -ml-safe-offset-* {
 	margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 
@@ -622,271 +622,271 @@
 @utility m-safe-or-* {
 	margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -m-safe-or-* {
 	margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility mx-safe-or-* {
 	margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -mx-safe-or-* {
 	margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility my-safe-or-* {
 	margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -my-safe-or-* {
 	margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility ms-safe-or-* {
 	margin-inline-start: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -ms-safe-or-* {
 	margin-inline-start: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility me-safe-or-* {
 	margin-inline-end: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -me-safe-or-* {
 	margin-inline-end: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility mt-safe-or-* {
 	margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -mt-safe-or-* {
 	margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility mr-safe-or-* {
 	margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -mr-safe-or-* {
 	margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility mb-safe-or-* {
 	margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -mb-safe-or-* {
 	margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility ml-safe-or-* {
 	margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -ml-safe-or-* {
 	margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 
 /* Padding utilities with offset variant */
 @utility p-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -p-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 	padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility px-safe-offset-* {
 	padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -px-safe-offset-* {
 	padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility py-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -py-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility ps-safe-offset-* {
 	padding-inline-start: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -ps-safe-offset-* {
 	padding-inline-start: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility pe-safe-offset-* {
 	padding-inline-end: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -pe-safe-offset-* {
 	padding-inline-end: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility pt-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 }
 @utility -pt-safe-offset-* {
 	padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 }
 @utility pr-safe-offset-* {
 	padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -pr-safe-offset-* {
 	padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility pb-safe-offset-* {
 	padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -pb-safe-offset-* {
 	padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility pl-safe-offset-* {
 	padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -pl-safe-offset-* {
 	padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 
@@ -894,271 +894,271 @@
 @utility p-safe-or-* {
 	padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -p-safe-or-* {
 	padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility px-safe-or-* {
 	padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -px-safe-or-* {
 	padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility py-safe-or-* {
 	padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -py-safe-or-* {
 	padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility ps-safe-or-* {
 	padding-inline-start: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -ps-safe-or-* {
 	padding-inline-start: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility pe-safe-or-* {
 	padding-inline-end: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -pe-safe-or-* {
 	padding-inline-end: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility pt-safe-or-* {
 	padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -pt-safe-or-* {
 	padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility pr-safe-or-* {
 	padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -pr-safe-or-* {
 	padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility pb-safe-or-* {
 	padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -pb-safe-or-* {
 	padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility pl-safe-or-* {
 	padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -pl-safe-or-* {
 	padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 
 /* Scroll margin utilities with offset variant */
 @utility scroll-m-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-m-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-mx-safe-offset-* {
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-mx-safe-offset-* {
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-my-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -scroll-my-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility scroll-ms-safe-offset-* {
 	scroll-margin-inline-start: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-ms-safe-offset-* {
 	scroll-margin-inline-start: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-me-safe-offset-* {
 	scroll-margin-inline-end: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -scroll-me-safe-offset-* {
 	scroll-margin-inline-end: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility scroll-mt-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 }
 @utility -scroll-mt-safe-offset-* {
 	scroll-margin-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 }
 @utility scroll-mr-safe-offset-* {
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -scroll-mr-safe-offset-* {
 	scroll-margin-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility scroll-mb-safe-offset-* {
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -scroll-mb-safe-offset-* {
 	scroll-margin-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility scroll-ml-safe-offset-* {
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-ml-safe-offset-* {
 	scroll-margin-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 
@@ -1166,271 +1166,271 @@
 @utility scroll-m-safe-or-* {
 	scroll-margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-m-safe-or-* {
 	scroll-margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-mx-safe-or-* {
 	scroll-margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-mx-safe-or-* {
 	scroll-margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-my-safe-or-* {
 	scroll-margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-my-safe-or-* {
 	scroll-margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-ms-safe-or-* {
 	scroll-margin-inline-start: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-ms-safe-or-* {
 	scroll-margin-inline-start: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-me-safe-or-* {
 	scroll-margin-inline-end: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-me-safe-or-* {
 	scroll-margin-inline-end: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-mt-safe-or-* {
 	scroll-margin-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-mt-safe-or-* {
 	scroll-margin-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-mr-safe-or-* {
 	scroll-margin-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-mr-safe-or-* {
 	scroll-margin-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-mb-safe-or-* {
 	scroll-margin-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-mb-safe-or-* {
 	scroll-margin-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-ml-safe-or-* {
 	scroll-margin-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-ml-safe-or-* {
 	scroll-margin-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 
 /* Scroll padding utilities with offset variant */
 @utility scroll-p-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-p-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-px-safe-offset-* {
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-px-safe-offset-* {
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-py-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -scroll-py-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility scroll-ps-safe-offset-* {
 	scroll-padding-inline-start: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-ps-safe-offset-* {
 	scroll-padding-inline-start: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility scroll-pe-safe-offset-* {
 	scroll-padding-inline-end: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -scroll-pe-safe-offset-* {
 	scroll-padding-inline-end: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility scroll-pt-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 }
 @utility -scroll-pt-safe-offset-* {
 	scroll-padding-top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 }
 @utility scroll-pr-safe-offset-* {
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -scroll-pr-safe-offset-* {
 	scroll-padding-right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility scroll-pb-safe-offset-* {
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -scroll-pb-safe-offset-* {
 	scroll-padding-bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility scroll-pl-safe-offset-* {
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -scroll-pl-safe-offset-* {
 	scroll-padding-left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 
@@ -1438,265 +1438,265 @@
 @utility scroll-p-safe-or-* {
 	scroll-padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-p-safe-or-* {
 	scroll-padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-px-safe-or-* {
 	scroll-padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-px-safe-or-* {
 	scroll-padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-py-safe-or-* {
 	scroll-padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	scroll-padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-py-safe-or-* {
 	scroll-padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	scroll-padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-ps-safe-or-* {
 	scroll-padding-inline-start: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-ps-safe-or-* {
 	scroll-padding-inline-start: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-pe-safe-or-* {
 	scroll-padding-inline-end: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-pe-safe-or-* {
 	scroll-padding-inline-end: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-pt-safe-or-* {
 	scroll-padding-top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-pt-safe-or-* {
 	scroll-padding-top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-pr-safe-or-* {
 	scroll-padding-right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-pr-safe-or-* {
 	scroll-padding-right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-pb-safe-or-* {
 	scroll-padding-bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-pb-safe-or-* {
 	scroll-padding-bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility scroll-pl-safe-or-* {
 	scroll-padding-left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -scroll-pl-safe-or-* {
 	scroll-padding-left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 
 /* Inset utilities with offset variant */
 @utility inset-safe-offset-* {
-	top: --spacing(--value(integer, [integer]) + var(--twsa-safe-area-inset-top));
+	top: --spacing(--value(number, [number]) + var(--twsa-safe-area-inset-top));
 	right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -inset-safe-offset-* {
 	top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 	left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility inset-x-safe-offset-* {
 	right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -inset-x-safe-offset-* {
 	right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 	left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility inset-y-safe-offset-* {
-	top: --spacing(--value(integer, [integer]) + var(--twsa-safe-area-inset-top));
+	top: --spacing(--value(number, [number]) + var(--twsa-safe-area-inset-top));
 	bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -inset-y-safe-offset-* {
 	top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 	bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility start-safe-offset-* {
 	inset-inline-start: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -start-safe-offset-* {
 	inset-inline-start: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 @utility end-safe-offset-* {
 	inset-inline-end: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -end-safe-offset-* {
 	inset-inline-end: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility top-safe-offset-* {
-	top: --spacing(--value(integer, [integer]) + var(--twsa-safe-area-inset-top));
+	top: --spacing(--value(number, [number]) + var(--twsa-safe-area-inset-top));
 }
 @utility -top-safe-offset-* {
 	top: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-top) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-top) * -1
 	);
 }
 @utility right-safe-offset-* {
 	right: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility -right-safe-offset-* {
 	right: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-right) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-right) * -1
 	);
 }
 @utility bottom-safe-offset-* {
 	bottom: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility -bottom-safe-offset-* {
 	bottom: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-bottom) * -1
 	);
 }
 @utility left-safe-offset-* {
 	left: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility -left-safe-offset-* {
 	left: --spacing(
-		--value(integer, [integer]) * -1 + var(--twsa-safe-area-inset-left) * -1
+		--value(number, [number]) * -1 + var(--twsa-safe-area-inset-left) * -1
 	);
 }
 
@@ -1704,149 +1704,149 @@
 @utility inset-safe-or-* {
 	top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -inset-safe-or-* {
 	top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility inset-x-safe-or-* {
 	right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -inset-x-safe-or-* {
 	right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility inset-y-safe-or-* {
 	top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -inset-y-safe-or-* {
 	top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 	bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility start-safe-or-* {
 	inset-inline-start: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -start-safe-or-* {
 	inset-inline-start: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility end-safe-or-* {
 	inset-inline-end: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -end-safe-or-* {
 	inset-inline-end: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility top-safe-or-* {
 	top: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -top-safe-or-* {
 	top: min(
 		calc(var(--twsa-safe-area-inset-top) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility right-safe-or-* {
 	right: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -right-safe-or-* {
 	right: min(
 		calc(var(--twsa-safe-area-inset-right) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility bottom-safe-or-* {
 	bottom: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -bottom-safe-or-* {
 	bottom: min(
 		calc(var(--twsa-safe-area-inset-bottom) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 @utility left-safe-or-* {
 	left: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility -left-safe-or-* {
 	left: min(
 		calc(var(--twsa-safe-area-inset-left) * -1),
-		calc(--spacing(--value(integer, [integer])) * -1)
+		calc(--spacing(--value(number, [number])) * -1)
 	);
 }
 
@@ -1888,62 +1888,62 @@
 /* Border utilities with offset variant */
 @utility border-safe-offset-* {
 	border-top-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	border-right-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	border-bottom-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 	border-left-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility border-x-safe-offset-* {
 	border-right-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 	border-left-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility border-y-safe-offset-* {
 	border-top-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 	border-bottom-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility border-s-safe-offset-* {
 	border-inline-start-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 @utility border-e-safe-offset-* {
 	border-inline-end-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility border-t-safe-offset-* {
 	border-top-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-top)
+		--value(number, [number]) + var(--twsa-safe-area-inset-top)
 	);
 }
 @utility border-r-safe-offset-* {
 	border-right-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-right)
+		--value(number, [number]) + var(--twsa-safe-area-inset-right)
 	);
 }
 @utility border-b-safe-offset-* {
 	border-bottom-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-bottom)
+		--value(number, [number]) + var(--twsa-safe-area-inset-bottom)
 	);
 }
 @utility border-l-safe-offset-* {
 	border-left-width: --spacing(
-		--value(integer, [integer]) + var(--twsa-safe-area-inset-left)
+		--value(number, [number]) + var(--twsa-safe-area-inset-left)
 	);
 }
 
@@ -1951,74 +1951,74 @@
 @utility border-safe-or-* {
 	border-top-width: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	border-right-width: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	border-bottom-width: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	border-left-width: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-x-safe-or-* {
 	border-right-width: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	border-left-width: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-y-safe-or-* {
 	border-top-width: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 	border-bottom-width: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-s-safe-or-* {
 	border-inline-start-width: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-e-safe-or-* {
 	border-inline-end-width: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-t-safe-or-* {
 	border-top-width: max(
 		var(--twsa-safe-area-inset-top),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-r-safe-or-* {
 	border-right-width: max(
 		var(--twsa-safe-area-inset-right),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-b-safe-or-* {
 	border-bottom-width: max(
 		var(--twsa-safe-area-inset-bottom),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
 @utility border-l-safe-or-* {
 	border-left-width: max(
 		var(--twsa-safe-area-inset-left),
-		--spacing(--value(integer, [integer]))
+		--spacing(--value(number, [number]))
 	);
 }
