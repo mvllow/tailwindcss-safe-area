@@ -63,10 +63,7 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [
-					`margin-${d}`,
-					`var(--twsa-safe-area-inset-${d})`,
-				]),
+				directions.map((d) => [`margin-${d}`, `var(--twsa-inset-${d})`]),
 			),
 		);
 	});
@@ -88,7 +85,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`margin-${d}`,
-					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -96,15 +93,15 @@ describe("Safe Area Utilities", () => {
 
 	test("logical margin", () => {
 		expectCSSProperties({
-			"margin-inline-start": "var(--twsa-safe-area-inset-left)",
-			"margin-inline-end": "var(--twsa-safe-area-inset-right)",
+			"margin-inline-start": "var(--twsa-inset-left)",
+			"margin-inline-end": "var(--twsa-inset-right)",
 		});
 	});
 
 	test("negative logical margin", () => {
 		expectCSSProperties({
-			"margin-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
-			"margin-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
+			"margin-inline-start": "calc(var(--twsa-inset-left) * -1)",
+			"margin-inline-end": "calc(var(--twsa-inset-right) * -1)",
 		});
 	});
 
@@ -123,10 +120,7 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [
-					`padding-${d}`,
-					`var(--twsa-safe-area-inset-${d})`,
-				]),
+				directions.map((d) => [`padding-${d}`, `var(--twsa-inset-${d})`]),
 			),
 		);
 	});
@@ -148,7 +142,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`padding-${d}`,
-					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -156,15 +150,15 @@ describe("Safe Area Utilities", () => {
 
 	test("logical padding", () => {
 		expectCSSProperties({
-			"padding-inline-start": "var(--twsa-safe-area-inset-left)",
-			"padding-inline-end": "var(--twsa-safe-area-inset-right)",
+			"padding-inline-start": "var(--twsa-inset-left)",
+			"padding-inline-end": "var(--twsa-inset-right)",
 		});
 	});
 
 	test("negative logical padding", () => {
 		expectCSSProperties({
-			"padding-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
-			"padding-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
+			"padding-inline-start": "calc(var(--twsa-inset-left) * -1)",
+			"padding-inline-end": "calc(var(--twsa-inset-right) * -1)",
 		});
 	});
 
@@ -172,10 +166,7 @@ describe("Safe Area Utilities", () => {
 		expectSelectors([".scroll-m-safe"]);
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [
-					`scroll-margin-${d}`,
-					`var(--twsa-safe-area-inset-${d})`,
-				]),
+				directions.map((d) => [`scroll-margin-${d}`, `var(--twsa-inset-${d})`]),
 			),
 		);
 	});
@@ -186,7 +177,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-margin-${d}`,
-					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -198,7 +189,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-padding-${d}`,
-					`var(--twsa-safe-area-inset-${d})`,
+					`var(--twsa-inset-${d})`,
 				]),
 			),
 		);
@@ -210,7 +201,7 @@ describe("Safe Area Utilities", () => {
 			Object.fromEntries(
 				directions.map((d) => [
 					`scroll-padding-${d}`,
-					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
+					`calc(var(--twsa-inset-${d}) * -1)`,
 				]),
 			),
 		);
@@ -231,7 +222,7 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [`${d}`, `var(--twsa-safe-area-inset-${d})`]),
+				directions.map((d) => [`${d}`, `var(--twsa-inset-${d})`]),
 			),
 		);
 	});
@@ -251,25 +242,22 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [
-					`${d}`,
-					`calc(var(--twsa-safe-area-inset-${d}) * -1)`,
-				]),
+				directions.map((d) => [`${d}`, `calc(var(--twsa-inset-${d}) * -1)`]),
 			),
 		);
 	});
 
 	test("logical inset", () => {
 		expectCSSProperties({
-			"inset-inline-start": "var(--twsa-safe-area-inset-left)",
-			"inset-inline-end": "var(--twsa-safe-area-inset-right)",
+			"inset-inline-start": "var(--twsa-inset-left)",
+			"inset-inline-end": "var(--twsa-inset-right)",
 		});
 	});
 
 	test("negative logical inset", () => {
 		expectCSSProperties({
-			"inset-inline-start": "calc(var(--twsa-safe-area-inset-left) * -1)",
-			"inset-inline-end": "calc(var(--twsa-safe-area-inset-right) * -1)",
+			"inset-inline-start": "calc(var(--twsa-inset-left) * -1)",
+			"inset-inline-end": "calc(var(--twsa-inset-right) * -1)",
 		});
 	});
 
@@ -289,8 +277,8 @@ describe("Safe Area Utilities", () => {
 
 		ok(css.includes("calc("));
 		ok(css.includes("100vh"));
-		ok(css.includes("var(--twsa-safe-area-inset-top)"));
-		ok(css.includes("var(--twsa-safe-area-inset-bottom)"));
+		ok(css.includes("var(--twsa-inset-top)"));
+		ok(css.includes("var(--twsa-inset-bottom)"));
 		ok(css.includes("-webkit-fill-available"));
 		ok(css.includes("min-height"));
 		ok(css.includes("max-height"));
@@ -340,10 +328,10 @@ describe("Safe Area Utilities", () => {
 
 	test("CSS custom property defaults", () => {
 		expectCSSProperties({
-			"--twsa-safe-area-inset-top": "env(safe-area-inset-top)",
-			"--twsa-safe-area-inset-right": "env(safe-area-inset-right)",
-			"--twsa-safe-area-inset-bottom": "env(safe-area-inset-bottom)",
-			"--twsa-safe-area-inset-left": "env(safe-area-inset-left)",
+			"--twsa-inset-top": "env(safe-area-inset-top)",
+			"--twsa-inset-right": "env(safe-area-inset-right)",
+			"--twsa-inset-bottom": "env(safe-area-inset-bottom)",
+			"--twsa-inset-left": "env(safe-area-inset-left)",
 		});
 	});
 
@@ -359,10 +347,10 @@ describe("Safe Area Utilities", () => {
 		]);
 
 		expectCSSProperties({
-			"--twsa-safe-area-inset-top": "env(safe-area-inset-top)",
-			"--twsa-safe-area-inset-right": "env(safe-area-inset-right)",
-			"--twsa-safe-area-inset-bottom": "env(safe-area-inset-bottom)",
-			"--twsa-safe-area-inset-left": "env(safe-area-inset-left)",
+			"--twsa-inset-top": "env(safe-area-inset-top)",
+			"--twsa-inset-right": "env(safe-area-inset-right)",
+			"--twsa-inset-bottom": "env(safe-area-inset-bottom)",
+			"--twsa-inset-left": "env(safe-area-inset-left)",
 		});
 	});
 
@@ -378,10 +366,10 @@ describe("Safe Area Utilities", () => {
 		]);
 
 		expectCSSProperties({
-			"--twsa-safe-area-inset-top": "0px",
-			"--twsa-safe-area-inset-right": "0px",
-			"--twsa-safe-area-inset-bottom": "0px",
-			"--twsa-safe-area-inset-left": "0px",
+			"--twsa-inset-top": "0px",
+			"--twsa-inset-right": "0px",
+			"--twsa-inset-bottom": "0px",
+			"--twsa-inset-left": "0px",
 		});
 	});
 
@@ -400,10 +388,7 @@ describe("Safe Area Utilities", () => {
 
 		expectCSSProperties(
 			Object.fromEntries(
-				directions.map((d) => [
-					`border-${d}-width`,
-					`var(--twsa-safe-area-inset-${d})`,
-				]),
+				directions.map((d) => [`border-${d}-width`, `var(--twsa-inset-${d})`]),
 			),
 		);
 	});
