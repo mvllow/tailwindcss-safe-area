@@ -6,7 +6,13 @@ import { join } from "node:path";
 import { before, describe, test } from "node:test";
 import { promisify } from "node:util";
 
+const input = join(import.meta.dirname, "test.css");
+const outputDir = mkdtempSync(join(tmpdir(), "tailwindcss-safe-area-"));
+const output = `${outputDir}/out.css`;
 const execAsync = promisify(exec);
+const directions = ["top", "right", "bottom", "left"];
+
+let css = "";
 
 function normalizeWhitespace(value) {
 	return value.replace(/\s+/g, " ").trim();
@@ -28,11 +34,6 @@ function expectCSSProperties(properties) {
 	}
 }
 
-let css = "";
-const input = join(import.meta.dirname, "test.css");
-const outputDir = mkdtempSync(join(tmpdir(), "tailwindcss-safe-area-"));
-const output = `${outputDir}/out.css`;
-
 before(async () => {
 	mkdirSync(outputDir, { recursive: true });
 	try {
@@ -46,8 +47,6 @@ before(async () => {
 });
 
 describe("Safe Area Utilities", () => {
-	const directions = ["top", "right", "bottom", "left"];
-
 	test("margin", () => {
 		expectSelectors([
 			".m-safe",
