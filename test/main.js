@@ -22,9 +22,13 @@ function contains(value, pattern) {
 	return normalizeWhitespace(value).includes(normalizeWhitespace(pattern));
 }
 
-function expectSelectors(selectors) {
-	selectors.forEach((selector) => {
-		ok(css.includes(selector), `Missing selector: ${selector}`);
+function escapeClassName(name) {
+	return name.replace(/[^\w-]/g, "\\$&");
+}
+
+function expectClasses(classes) {
+	classes.forEach((name) => {
+		ok(css.includes(escapeClassName(name)), `Missing class: ${name}`);
 	});
 }
 
@@ -48,16 +52,16 @@ before(async () => {
 
 describe("Safe Area Utilities", () => {
 	test("margin", () => {
-		expectSelectors([
-			".m-safe",
-			".mx-safe",
-			".my-safe",
-			".mt-safe",
-			".mr-safe",
-			".mb-safe",
-			".ml-safe",
-			".ms-safe",
-			".me-safe",
+		expectClasses([
+			"m-safe",
+			"mx-safe",
+			"my-safe",
+			"mt-safe",
+			"mr-safe",
+			"mb-safe",
+			"ml-safe",
+			"ms-safe",
+			"me-safe",
 		]);
 
 		expectCSSProperties(
@@ -68,16 +72,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("negative margin", () => {
-		expectSelectors([
-			".-m-safe",
-			".-mx-safe",
-			".-my-safe",
-			".-mt-safe",
-			".-mr-safe",
-			".-mb-safe",
-			".-ml-safe",
-			".-ms-safe",
-			".-me-safe",
+		expectClasses([
+			"-m-safe",
+			"-mx-safe",
+			"-my-safe",
+			"-mt-safe",
+			"-mr-safe",
+			"-mb-safe",
+			"-ml-safe",
+			"-ms-safe",
+			"-me-safe",
 		]);
 
 		expectCSSProperties(
@@ -105,16 +109,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("padding", () => {
-		expectSelectors([
-			".p-safe",
-			".px-safe",
-			".py-safe",
-			".pt-safe",
-			".pr-safe",
-			".pb-safe",
-			".pl-safe",
-			".ps-safe",
-			".pe-safe",
+		expectClasses([
+			"p-safe",
+			"px-safe",
+			"py-safe",
+			"pt-safe",
+			"pr-safe",
+			"pb-safe",
+			"pl-safe",
+			"ps-safe",
+			"pe-safe",
 		]);
 
 		expectCSSProperties(
@@ -125,16 +129,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("negative padding", () => {
-		expectSelectors([
-			".-p-safe",
-			".-px-safe",
-			".-py-safe",
-			".-pt-safe",
-			".-pr-safe",
-			".-pb-safe",
-			".-pl-safe",
-			".-ps-safe",
-			".-pe-safe",
+		expectClasses([
+			"-p-safe",
+			"-px-safe",
+			"-py-safe",
+			"-pt-safe",
+			"-pr-safe",
+			"-pb-safe",
+			"-pl-safe",
+			"-ps-safe",
+			"-pe-safe",
 		]);
 
 		expectCSSProperties(
@@ -162,7 +166,7 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("scroll margin", () => {
-		expectSelectors([".scroll-m-safe"]);
+		expectClasses(["scroll-m-safe"]);
 		expectCSSProperties(
 			Object.fromEntries(
 				directions.map((d) => [`scroll-margin-${d}`, `var(--twsa-inset-${d})`]),
@@ -171,7 +175,7 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("negative scroll margin", () => {
-		expectSelectors([".-scroll-m-safe"]);
+		expectClasses(["-scroll-m-safe"]);
 		expectCSSProperties(
 			Object.fromEntries(
 				directions.map((d) => [
@@ -183,7 +187,7 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("scroll padding", () => {
-		expectSelectors([".scroll-p-safe"]);
+		expectClasses(["scroll-p-safe"]);
 		expectCSSProperties(
 			Object.fromEntries(
 				directions.map((d) => [
@@ -195,7 +199,7 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("negative scroll padding", () => {
-		expectSelectors([".-scroll-p-safe"]);
+		expectClasses(["-scroll-p-safe"]);
 		expectCSSProperties(
 			Object.fromEntries(
 				directions.map((d) => [
@@ -207,16 +211,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("inset", () => {
-		expectSelectors([
-			".inset-safe",
-			".inset-x-safe",
-			".inset-y-safe",
-			".start-safe",
-			".end-safe",
-			".top-safe",
-			".right-safe",
-			".bottom-safe",
-			".left-safe",
+		expectClasses([
+			"inset-safe",
+			"inset-x-safe",
+			"inset-y-safe",
+			"start-safe",
+			"end-safe",
+			"top-safe",
+			"right-safe",
+			"bottom-safe",
+			"left-safe",
 		]);
 
 		expectCSSProperties(
@@ -227,16 +231,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("negative inset", () => {
-		expectSelectors([
-			".-inset-safe",
-			".-inset-x-safe",
-			".-inset-y-safe",
-			".-start-safe",
-			".-end-safe",
-			".-top-safe",
-			".-right-safe",
-			".-bottom-safe",
-			".-left-safe",
+		expectClasses([
+			"-inset-safe",
+			"-inset-x-safe",
+			"-inset-y-safe",
+			"-start-safe",
+			"-end-safe",
+			"-top-safe",
+			"-right-safe",
+			"-bottom-safe",
+			"-left-safe",
 		]);
 
 		expectCSSProperties(
@@ -261,17 +265,17 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("height", () => {
-		expectSelectors([
-			".h-screen-safe",
-			".h-vh-safe",
-			".h-dvh-safe",
-			".h-svh-safe",
-			".h-lvh-safe",
-			".min-h-screen-safe",
-			".max-h-screen-safe",
-			".h-fill-safe",
-			".min-h-fill-safe",
-			".max-h-fill-safe",
+		expectClasses([
+			"h-screen-safe",
+			"h-vh-safe",
+			"h-dvh-safe",
+			"h-svh-safe",
+			"h-lvh-safe",
+			"min-h-screen-safe",
+			"max-h-screen-safe",
+			"h-fill-safe",
+			"min-h-fill-safe",
+			"max-h-fill-safe",
 		]);
 
 		ok(css.includes("calc("));
@@ -286,40 +290,60 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("offset", () => {
-		expectSelectors([
-			".m-safe-offset-4",
-			".p-safe-offset-4",
-			".inset-safe-offset-4",
-			".scroll-m-safe-offset-4",
+		expectClasses([
+			"m-safe-offset-4",
+			"p-safe-offset-4",
+			"inset-safe-offset-4",
+			"scroll-m-safe-offset-4",
+
+			"m-safe-offset-3.5",
+			"p-safe-offset-3.5",
+			"inset-safe-offset-3.5",
+			"scroll-m-safe-offset-3.5",
 		]);
 	});
 
 	test("negative offset", () => {
-		expectSelectors([
-			".-m-safe-offset-4",
-			".-p-safe-offset-4",
-			".-inset-safe-offset-4",
-			".-scroll-m-safe-offset-4",
+		expectClasses([
+			"-m-safe-offset-4",
+			"-p-safe-offset-4",
+			"-inset-safe-offset-4",
+			"-scroll-m-safe-offset-4",
+
+			"-m-safe-offset-3.5",
+			"-p-safe-offset-3.5",
+			"-inset-safe-offset-3.5",
+			"-scroll-m-safe-offset-3.5",
 		]);
 	});
 
 	test("or", () => {
-		expectSelectors([
-			".m-safe-or-4",
-			".p-safe-or-4",
-			".inset-safe-or-4",
-			".scroll-m-safe-or-4",
+		expectClasses([
+			"m-safe-or-4",
+			"p-safe-or-4",
+			"inset-safe-or-4",
+			"scroll-m-safe-or-4",
+
+			"m-safe-or-3.5",
+			"p-safe-or-3.5",
+			"inset-safe-or-3.5",
+			"scroll-m-safe-or-3.5",
 		]);
 
 		ok(css.includes("max("));
 	});
 
 	test("negative or", () => {
-		expectSelectors([
-			".-m-safe-or-4",
-			".-p-safe-or-4",
-			".-inset-safe-or-4",
-			".-scroll-m-safe-or-4",
+		expectClasses([
+			"-m-safe-or-4",
+			"-p-safe-or-4",
+			"-inset-safe-or-4",
+			"-scroll-m-safe-or-4",
+
+			"-m-safe-or-3.5",
+			"-p-safe-or-3.5",
+			"-inset-safe-or-3.5",
+			"-scroll-m-safe-or-3.5",
 		]);
 
 		ok(css.includes("min("));
@@ -335,14 +359,14 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("safe area enable", () => {
-		expectSelectors([
-			".safe",
-			".safe-x",
-			".safe-y",
-			".safe-t",
-			".safe-r",
-			".safe-b",
-			".safe-l",
+		expectClasses([
+			"safe",
+			"safe-x",
+			"safe-y",
+			"safe-t",
+			"safe-r",
+			"safe-b",
+			"safe-l",
 		]);
 
 		expectCSSProperties({
@@ -354,14 +378,14 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("safe area disable", () => {
-		expectSelectors([
-			".safe-none",
-			".safe-x-none",
-			".safe-y-none",
-			".safe-t-none",
-			".safe-r-none",
-			".safe-b-none",
-			".safe-l-none",
+		expectClasses([
+			"safe-none",
+			"safe-x-none",
+			"safe-y-none",
+			"safe-t-none",
+			"safe-r-none",
+			"safe-b-none",
+			"safe-l-none",
 		]);
 
 		expectCSSProperties({
@@ -373,16 +397,16 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("border", () => {
-		expectSelectors([
-			".border-safe",
-			".border-x-safe",
-			".border-y-safe",
-			".border-s-safe",
-			".border-e-safe",
-			".border-t-safe",
-			".border-r-safe",
-			".border-b-safe",
-			".border-l-safe",
+		expectClasses([
+			"border-safe",
+			"border-x-safe",
+			"border-y-safe",
+			"border-s-safe",
+			"border-e-safe",
+			"border-t-safe",
+			"border-r-safe",
+			"border-b-safe",
+			"border-l-safe",
 		]);
 
 		expectCSSProperties(
@@ -393,30 +417,50 @@ describe("Safe Area Utilities", () => {
 	});
 
 	test("border offset", () => {
-		expectSelectors([
-			".border-safe-offset-4",
-			".border-x-safe-offset-4",
-			".border-y-safe-offset-4",
-			".border-s-safe-offset-4",
-			".border-e-safe-offset-4",
-			".border-t-safe-offset-4",
-			".border-r-safe-offset-4",
-			".border-b-safe-offset-4",
-			".border-l-safe-offset-4",
+		expectClasses([
+			"border-safe-offset-4",
+			"border-x-safe-offset-4",
+			"border-y-safe-offset-4",
+			"border-s-safe-offset-4",
+			"border-e-safe-offset-4",
+			"border-t-safe-offset-4",
+			"border-r-safe-offset-4",
+			"border-b-safe-offset-4",
+			"border-l-safe-offset-4",
+
+			"border-safe-offset-3.5",
+			"border-x-safe-offset-3.5",
+			"border-y-safe-offset-3.5",
+			"border-s-safe-offset-3.5",
+			"border-e-safe-offset-3.5",
+			"border-t-safe-offset-3.5",
+			"border-r-safe-offset-3.5",
+			"border-b-safe-offset-3.5",
+			"border-l-safe-offset-3.5",
 		]);
 	});
 
 	test("border or", () => {
-		expectSelectors([
-			".border-safe-or-4",
-			".border-x-safe-or-4",
-			".border-y-safe-or-4",
-			".border-s-safe-or-4",
-			".border-e-safe-or-4",
-			".border-t-safe-or-4",
-			".border-r-safe-or-4",
-			".border-b-safe-or-4",
-			".border-l-safe-or-4",
+		expectClasses([
+			"border-safe-or-4",
+			"border-x-safe-or-4",
+			"border-y-safe-or-4",
+			"border-s-safe-or-4",
+			"border-e-safe-or-4",
+			"border-t-safe-or-4",
+			"border-r-safe-or-4",
+			"border-b-safe-or-4",
+			"border-l-safe-or-4",
+
+			"border-safe-or-3.5",
+			"border-x-safe-or-3.5",
+			"border-y-safe-or-3.5",
+			"border-s-safe-or-3.5",
+			"border-e-safe-or-3.5",
+			"border-t-safe-or-3.5",
+			"border-r-safe-or-3.5",
+			"border-b-safe-or-3.5",
+			"border-l-safe-or-3.5",
 		]);
 
 		ok(css.includes("max("));
