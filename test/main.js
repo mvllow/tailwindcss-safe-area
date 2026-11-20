@@ -300,6 +300,11 @@ describe("Safe Area Utilities", () => {
 			"p-safe-offset-3.5",
 			"inset-safe-offset-3.5",
 			"scroll-m-safe-offset-3.5",
+
+			"m-safe-offset-[12]",
+			"p-safe-offset-[12]",
+			"inset-safe-offset-[12]",
+			"scroll-m-safe-offset-[12]",
 		]);
 	});
 
@@ -314,6 +319,11 @@ describe("Safe Area Utilities", () => {
 			"-p-safe-offset-3.5",
 			"-inset-safe-offset-3.5",
 			"-scroll-m-safe-offset-3.5",
+
+			"-m-safe-offset-[12]",
+			"-p-safe-offset-[12]",
+			"-inset-safe-offset-[12]",
+			"-scroll-m-safe-offset-[12]",
 		]);
 	});
 
@@ -328,6 +338,11 @@ describe("Safe Area Utilities", () => {
 			"p-safe-or-3.5",
 			"inset-safe-or-3.5",
 			"scroll-m-safe-or-3.5",
+
+			"m-safe-or-[12]",
+			"p-safe-or-[12]",
+			"inset-safe-or-[12]",
+			"scroll-m-safe-or-[12]",
 		]);
 
 		ok(css.includes("max("));
@@ -344,6 +359,11 @@ describe("Safe Area Utilities", () => {
 			"-p-safe-or-3.5",
 			"-inset-safe-or-3.5",
 			"-scroll-m-safe-or-3.5",
+
+			"-m-safe-or-[12]",
+			"-p-safe-or-[12]",
+			"-inset-safe-or-[12]",
+			"-scroll-m-safe-or-[12]",
 		]);
 
 		ok(css.includes("min("));
@@ -437,6 +457,16 @@ describe("Safe Area Utilities", () => {
 			"border-r-safe-offset-3.5",
 			"border-b-safe-offset-3.5",
 			"border-l-safe-offset-3.5",
+
+			"border-safe-offset-[12]",
+			"border-x-safe-offset-[12]",
+			"border-y-safe-offset-[12]",
+			"border-s-safe-offset-[12]",
+			"border-e-safe-offset-[12]",
+			"border-t-safe-offset-[12]",
+			"border-r-safe-offset-[12]",
+			"border-b-safe-offset-[12]",
+			"border-l-safe-offset-[12]",
 		]);
 	});
 
@@ -461,6 +491,16 @@ describe("Safe Area Utilities", () => {
 			"border-r-safe-or-3.5",
 			"border-b-safe-or-3.5",
 			"border-l-safe-or-3.5",
+
+			"border-safe-or-[12]",
+			"border-x-safe-or-[12]",
+			"border-y-safe-or-[12]",
+			"border-s-safe-or-[12]",
+			"border-e-safe-or-[12]",
+			"border-t-safe-or-[12]",
+			"border-r-safe-or-[12]",
+			"border-b-safe-or-[12]",
+			"border-l-safe-or-[12]",
 		]);
 
 		ok(css.includes("max("));
