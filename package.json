@@ -18,7 +18,8 @@
 	],
 	"scripts": {
 		"test": "node --test",
-		"release": "npx np@latest"
+		"format": "npx prettier --write .",
+		"release": "npm run format && npm test && npx np@latest"
 	},
 	"engines": {
 		"node": ">=20"
